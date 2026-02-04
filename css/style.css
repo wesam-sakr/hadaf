@@ -1260,8 +1260,36 @@ option {
    overflow: hidden;
 }
 
-/* --------------------- footer --------------------- */
+.blog_details .category,
+.blog_details .date {
+   display: flex;
+   padding: .3rem 0.65rem;
+   align-items: center;
+   gap: 0.375rem;
+   border-radius: 0.5rem;
+   background: var(--white, #FFF);
+}
+.blog_details .category *,
+.blog_details .date *{
+   color: #101010;
+}
 
+.blog_details .blog_content :not(:is(h1, h2, h3, h4, h5, h6)) {
+  color: #B3B3B3;
+  font-size: 1.02rem;
+  margin-bottom: .5rem;
+}
+
+.blog_details .blog_content ul {
+   list-style: disc;
+   padding-inline-start: 1rem;
+}
+
+.blog_details .blog_content :is(h1, h2, h3, h4, h5, h6) {
+   font-weight: bold;
+   color: var(--white);
+   margin-block: 1rem;
+}
 
 /* --------------------- footer --------------------- */
 footer {

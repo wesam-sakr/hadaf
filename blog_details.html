@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hadaf</title>
+
+    <link rel="icon" type="image/x-icon" href="images/logo.svg" />
+
+    <!-- Bootstrap link  -->
+    <link
+      rel="stylesheet"
+      href="css/bootstrap.rtl.min.css"
+      id="bootstrap-style"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+      integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- font awesom link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- owl-carousel link -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- select2 link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="index.html" class="brand-link">
+            <img src="images/logo.svg" alt="هدّاف" />
+          </a>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <!-- Button -->
+          <a href="#" class="main-btn">
+            استشارة مجانية
+            <i class="bi bi-arrow-left"></i>
+          </a>
+
+          <!-- Burger -->
+          <button class="burger" id="burgerBtn">
+            <img src="images/menu.svg" alt="" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Overlay Menu -->
+      <div class="menu-overlay" id="menuOverlay">
+        <nav class="menu-box">
+          <button class="close-btn" id="closeMenu">✕</button>
+          <ul class="menu-links">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link"> الرئيسية </a>
+            </li>
+            <li class="nav-item">
+              <a href="about_us.html" class="nav-link"> من نحن </a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link"> مشاريعنا </a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html" class="nav-link"> خدماتنا </a>
+            </li>
+            <li class="nav-item">
+              <a href="blogs.html" class="nav-link"> المدونة </a>
+            </li>
+            <li class="nav-item">
+              <a href="contact_us.html" class="nav-link"> تواصل معنا </a>
+            </li>
+          </ul>
+          <div class="social">
+            <span class="d-block fw-semibold mb-2">Social Media:</span>
+            <nav aria-label="Social Media Links">
+              <ul class="social-icons">
+                <li>
+                  <a
+                    href=""
+                    target="_blank"
+                    aria-label="Visit our dribbble page"
+                  >
+                    <i class="bi bi-dribbble"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href=""
+                    target="_blank"
+                    aria-label="Visit our Facebook page"
+                  >
+                    <i class="fa-brands fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href=""
+                    target="_blank"
+                    aria-label="Visit our Twitter page"
+                  >
+                    <i class="fa-brands fa-x-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href=""
+                    target="_blank"
+                    aria-label="Visit our Instagram page"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="special-breadcrumb">
+      <div class="container-fluid">
+        <h1 class="breadcrumb-title mb-4">
+          تبي توصل جمهورك وتبيع؟ محتاج شركة تسويقية
+        </h1>
+        <img src="images/serv-banner.png" alt="" />
+      </div>
+    </section>
+
+    <!-- blog details -->
+    <section class="blog_details pt-4">
+      <div class="container-fluid">
+        <div class="d-flex gap-2 justify-content-center align-items-center pb-2 pt-1">
+          <div class="date">
+            <i class="bi bi-calendar"></i>
+            <span> 14 يوليو, 2025</span>
+          </div>
+          <div class="category">
+            <i class="bi bi-folder"></i>
+            <span>القسم : تسويق </span>
+          </div>
+        </div>
+
+        <div class="blog_content mt-4">
+          <p>
+            خلنا نتفق إنّ اليوم السوق السعودي تغيّر، والمنافسة صارت أقوى من أي وقت مضى. وإذا كنت صاحب متجر إلكتروني أو ناوي تطلق موقعك، فأنت أكيد محتاج شركة تسويقية تمسك زمام الأمور وتفهم كيف تحرك السوق لك بطريقة ذكية ومربحة.
+          </p>
+          <p>
+            مو كل أحد يقدر يوصل صوتك للجمهور الصح، ولا كل حملة إعلانية تنجح. السر؟ إنك تشتغل مع جهة تفهم السوق السعودي، وعندها الخبرة في التسويق الرقمي، وتعرف كيف تبني استراتيجية متكاملة، من الإنشاء إلى جذب العملاء، وتحويل المتابعين إلى مشترين فعليين.
+          </p>
+
+          <p>وهنا يجي دور المنصة السعودية، اللي شغلتها مو بس إنها تصمملك متجر أو موقع، لا! هي تشتغل على بناء مشروعك الرقمي خطوة بخطوة، بأسلوب مبتكر، وخطة تسويق مصممة خصيصاً لنشاطك.</p>
+
+          <h2>السوق متغير؟ نعم! والمحتوى صار أقوى سلاح</h2>
+
+          <p>
+            في الماضي، الناس كانت تشتري بدون ما تدور أو تسأل. اليوم، كل شيء اختلف. صار عندنا عميل واعي، يقارن، يقرأ، ويسأل، ولا يشتري إلا من اللي يعرف يقنعه.
+          </p>
+
+          <p>
+            عشان كذا، المحتوى صار العنصر الأهم. محتوى بصري، محتوى كتابي، فيديوهات، تصاميم… كل هذا لازم يشتغل سوا بأسلوب احترافي.
+          </p>
+
+          <p>
+            وهنا يبان الفرق لما تتعامل مع شركة تسويقية مثل Katchy، عندها فريق يشتغل على:
+          </p>
+
+          <ul>
+            <li>
+              كتابة محتوى تسويقي جذاب
+            </li>
+            <li>تصميمات جرافيك وهوية تجارية تترك أثر</li>
+            <li>إدارة منصات التواصل الاجتماعي بطريقة احترافية (SMO)</li>
+            <li>تحسين ترتيبك على محركات البحث (SEO)</li>
+            <li>وإطلاق حملات إعلانية مدروسة بدقة</li>
+          </ul>
+
+          <p>
+            كل هذا يخلي مشروعك يطلع قدام المنافسين ويوصل للجمهور المستهدف بشكل ذكي.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <a href="#" id="scroll-top">
+      <i class="bi bi-chevron-double-up"></i>
+    </a>
+
+    <footer>
+      <div class="overlay pt-5">
+        <div class="container-fluid pt-5">
+          <p class="display-3 text-center mb-5">دعنـــا نعمل معا</p>
+          <div class="footer-nav pt-5 pb-4">
+            <div class="navbar navbar-expand-lg mt-5 py-4">
+              <div class="row g-3 align-items-start justify-content-between">
+                <div class="col-lg-3 col-md-6">
+                  <div>
+                    <h2>هداف</h2>
+                    <p class="my-3">تواصل معي :</p>
+                    <nav aria-label="Social Media Links">
+                      <ul class="social-icons">
+                        <li>
+                          <a
+                            href=""
+                            target="_blank"
+                            aria-label="Visit our LinkedIn page"
+                          >
+                            <i class="fa-brands fa-linkedin-in"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            target="_blank"
+                            aria-label="Visit our Twitter page"
+                          >
+                            <i class="fa-brands fa-x-twitter"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            target="_blank"
+                            aria-label="Visit our Instagram page"
+                          >
+                            <i class="fa-brands fa-instagram"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            target="_blank"
+                            aria-label="Visit our Facebook page"
+                          >
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-5">
+                  <h4 class="fs-6">الصفحات</h4>
+                  <ul class="navbar-nav mb-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="about_us.html">معلومات عنا</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="services.html">خدماتنا</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="projects.html">مشاريعنا</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="blogs.html">المدونة</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="contact_us.html">اتصل بنا</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-3 col-md-5">
+                  <h4 class="fs-6">الخدمات</h4>
+                  <ul class="navbar-nav mb-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="service_details.html"
+                        >الحملات الإعلانية</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="service_details.html"
+                        >تصميم جرافيك</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="service_details.html"
+                        >الهوية التجارية
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="service_details.html"
+                        >تحسين محركات البحث</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="service_details.html"
+                        >إدارة حسابات التواصل الاجتماعي(SMM)</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-3 col-md-5">
+                  <ul class="navbar-nav mb-0">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link flex-column align-items-start"
+                        href="tel:90620930087"
+                      >
+                        <span class="d-block">هاتف:</span>
+                        <span class="text-white">+906 2093 0087</span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link flex-column align-items-start"
+                        href="maitto:hello@navastudio.com"
+                      >
+                        <span class="d-block">بريد إلكتروني:</span>
+                        <span class="text-white">hello@navastudio.com</span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link flex-column align-items-start"
+                        href="maitto:hello@navastudio.com"
+                      >
+                        <span class="d-block">عنوان:</span>
+                        <span class="text-white"
+                          >١٢٣ شارع مابل وود، سبرينغفيلد، إلينوي ٦٢٧٠٤، الولايات
+                          المتحدة الأمريكية</span
+                        >
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="copyrights">
+            <div
+              class="d-flex gap-1 flex-wrap w-100 align-items-center justify-content-md-between justify-content-center"
+            >
+              <span>جميع الحقوق محفوظة © 2025</span>
+              <div class="d-flex gap-1 align-items-center">
+                <a href="">الشروط والأحكام </a>
+                <span>|</span>
+                <a href="">سياسة الخصوصية</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- bootstrap script -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- owl-carousel script -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- select2 script -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
