@@ -583,7 +583,7 @@ option {
    background: url('../images/breadcrumb.png');
    background-size: cover !important;
    background-position: bottom !important;
-   padding-block: 15rem 25rem ;
+   padding-block: 15rem 25rem;
 
 
 }
@@ -915,6 +915,10 @@ option {
 .about-section img {
    aspect-ratio: 2 / 1;
    object-fit: cover;
+   height: 100%;
+}
+.about-section figure{
+   height: 100%;
 }
 
 .about-section .stats ul {
@@ -929,17 +933,24 @@ option {
    font-weight: 400;
 }
 
+.solutions .card{
+   border-bottom: 1px solid rgba(var(--whiteOp), 0.10);
+   padding-block: 1rem;
+}
+
 /*==-------- projects --------==*/
-.projects .nav-pills{
+.projects .nav-pills {
    padding: 0.5rem .7rem;
    border-radius: 3.1875rem;
    background: var(--secondary);
 }
-.projects .nav-pills .nav-link{
+
+.projects .nav-pills .nav-link {
    color: var(--white);
-   padding:.35rem  0.85rem;
+   padding: .35rem 0.85rem;
 }
-.projects .nav-pills .nav-link.active{
+
+.projects .nav-pills .nav-link.active {
    background: var(--white);
    border-radius: 70px;
    -webkit-border-radius: 70px;
@@ -949,6 +960,7 @@ option {
    color: var(--black);
    font-weight: 500;
 }
+
 .projects .card {
    border-radius: 0.75rem;
    overflow: hidden;
@@ -1021,8 +1033,9 @@ option {
 }
 
 .projects .card.all-projs .card-desc p,
+.solutions .card .card-desc p,
 .services .card .card-desc p {
-   font-size: 1.1rem;
+   /* font-size: 1.1rem; */
    opacity: .75;
    margin-bottom: .5rem;
    display: -webkit-box;
@@ -1086,7 +1099,7 @@ option {
 
 }
 
-.journey-steps .step_num {
+.step_num {
    display: flex;
    align-items: center;
    justify-content: center;
@@ -1231,6 +1244,9 @@ option {
    -webkit-box-orient: vertical;
    overflow: hidden;
 }
+
+/* --------------------- footer --------------------- */
+
 
 /* --------------------- footer --------------------- */
 footer {
@@ -1458,8 +1474,14 @@ input::placeholder {
       border-bottom: 1px solid rgba(var(--whiteOp), 0.2);
    }
 
+   .projects .nav-pills {
+      padding: .7rem;
+      border-radius: 1.1875rem;
+      gap: 10px;
+   }
+
    .partner_statistics {
-    padding-block: 1rem 1.5rem;
+      padding-block: 1rem 1.5rem;
    }
 
    .logo-wrapper img {
