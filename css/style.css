@@ -584,8 +584,15 @@ option {
    background-size: cover !important;
    background-position: bottom !important;
    padding-block: 15rem 25rem;
+}
 
-
+.special-breadcrumb{
+   padding-block: 10rem 0rem;
+   text-align: center;
+}
+.special-breadcrumb img{
+   border-radius: 0.75rem;
+   aspect-ratio: 3/1;
 }
 
 
@@ -1035,13 +1042,16 @@ option {
 .projects .card.all-projs .card-desc p,
 .solutions .card .card-desc p,
 .services .card .card-desc p {
-   /* font-size: 1.1rem; */
    opacity: .75;
    margin-bottom: .5rem;
    display: -webkit-box;
    -webkit-line-clamp: 4;
    -webkit-box-orient: vertical;
    overflow: hidden;
+}
+.services.service_features .card .card-desc p {
+   display: block;
+   overflow: visible;
 }
 
 .services .card .main-outline-btn {
