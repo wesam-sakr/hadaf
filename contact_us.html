@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hadaf</title>
+
+    <link rel="icon" type="image/x-icon" href="images/logo.svg" />
+
+    <!-- Bootstrap link  -->
+    <link
+      rel="stylesheet"
+      href="css/bootstrap.rtl.min.css"
+      id="bootstrap-style"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+      integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- font awesom link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- owl-carousel link -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- select2 link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light p-0 top-0">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand m-0" href="index.html">
+            <img src="images/logo.svg" alt />
+          </a>
+          <div
+            class="collapse navbar-collapse justify-content-between align-items-center"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link"> الرئيسية</a>
+              </li>
+              <li class="nav-item">
+                <a href="about_us.html" class="nav-link">نبذة عنا</a>
+              </li>
+              <li class="nav-item">
+                <a href="cars.html" class="nav-link">السيارات</a>
+              </li>
+              <li class="nav-item">
+                <a href="finance.html" class="nav-link">التمويل</a>
+              </li>
+              <li class="nav-item">
+                <a href="contact_us.html" class="nav-link active">اتصل بنا</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav m-0">
+              <div class="d-flex align-items-center gap-3">
+                <li class="nav-item lang">
+                  <a href="#" class="nav-link active">عربي</a>
+                </li>
+                <li class="nav-item lang">
+                  <a href="#" class="nav-link">En</a>
+                </li>
+              </div>
+              <li class="nav-item">
+                <a href="cars.html" class="nav-link main-btn">
+                  اختر سيارتك الآن
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ==== start breadcrumb ==== -->
+    <section>
+      <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+        <div class="container-fluid">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+            <li class="breadcrumb-item active" aria-current="page">اتصل بنا</li>
+          </ol>
+          <p class="breadcrumb-title">اتصل بنا</p>
+        </div>
+      </nav>
+    </section>
+    <!-- ==== end breadcrumb ==== -->
+
+    <!-- تواصل مع مندوب -->
+    <section class="contact-data py-5">
+      <div class="container-fluid">
+        <div class="row gy-0 align-items-end justify-content-between">
+          <div class="col-lg-5 col-md-8 col-12">
+            <h2 class="fs-4 mb-2">تواصل معنا</h2>
+            <p class="mb-4 text-white-50">
+              قسم الاتصال هو بوابتك للوصول إلينا نرحب باستفساراتكم واقتراحاتكم.
+            </p>
+            <form action="" class="mb-3">
+              <div class="row justify-content-center g-3">
+                <!-- الاسم -->
+                <div class="col-lg-6 col-12">
+                  <div class="form-group">
+                    <label for="" class="text-white-50 mb-2"> الاسم </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value=""
+                      class="form-control"
+                      placeholder="الإسم"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <!-- البريد الإلكتروني -->
+                <div class="col-lg-6 col-12">
+                  <div class="form-group">
+                    <label for="" class="text-white-50 mb-2">
+                      البريد الإلكتروني
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value=""
+                      class="form-control"
+                      placeholder="البريد الإلكتروني"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <!-- رقم الهاتف -->
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="" class="text-white-50 mb-2">
+                      رقم الهاتف
+                    </label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        name="subject"
+                        value=""
+                        class="form-control"
+                        placeholder="رقم الهاتف"
+                        required=""
+                      />
+                      <span class="input-group-text" id="basic-addon1"
+                        >+966</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- الرسالة -->
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="" class="text-white-50 mb-2"> الرسالة </label>
+                    <textarea
+                      name="message"
+                      cols="40"
+                      rows="6"
+                      class="form-control"
+                      placeholder="الرسالة"
+                      required=""
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <button class="main-btn mt-4 px-5 ms-auto" type="submit">
+                إرسال
+              </button>
+            </form>
+          </div>
+          <div class="col-lg-4 col-md-4 col-8 ms-auto">
+            <div class="contact-img">
+              <img src="images/contact-img.png" alt="" />
+            </div>
+          </div>
+          <div class="col-12 mb-4 mb-lg-0">
+            <div class="card">
+              <div class="card-body">
+                <div class="row row-cols-lg-3 row-cols-1 gy-4">
+                  <!-- phone -->
+                  <div class="col">
+                    <!-- call -->
+                    <div class="contact-info h-100">
+                      <div class="d-flex gap-2 align-content-center">
+                        <i class="bi bi-telephone"></i>
+                        <div>
+                          <p>الهاتف</p>
+                          <a href="tel:+966112399310">+971 52-333-4444</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- mail -->
+                  <div class="col">
+                    <div class="contact-info h-100">
+                      <div class="d-flex gap-2 align-content-center">
+                        <i class="bi bi-envelope-fill"></i>
+                        <div>
+                          <p>البريد الالكتروني</p>
+                          <a href="mailto:info@classcars.com"
+                            >info@classcars.com</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- location -->
+                  <div class="col">
+                    <div class="contact-info h-100">
+                      <div class="d-flex gap-2 align-content-center">
+                        <i class="bi bi-geo-alt"></i>
+                        <div>
+                          <p>العنوان</p>
+                          <p>Dubai, Water Tower, Office 123</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <a href="#" id="scroll-top">
+      <i class="bi bi-chevron-double-up"></i>
+    </a>
+
+    <footer>
+      <div class="footer-nav py-4">
+        <div class="navbar navbar-expand-lg">
+          <div
+            class="container-fluid gap-3 align-items-start justify-content-between"
+          >
+            <div class="col-lg-4 col-md-6">
+              <div>
+                <a class="navbar-brand m-0" href="index.html">
+                  <img src="images/logo.svg" alt="" />
+                </a>
+                <p class="my-3">
+                  في مجموعة كلاس للسيارات، نقدم لك أفضل الأسعار التي لا تقارن،
+                  وأكبر تشكيلة من السيارات في مكان واحد
+                </p>
+                <nav aria-label="Social Media Links">
+                  <ul class="social-icons">
+                    <li>
+                      <a
+                        href=""
+                        target="_blank"
+                        aria-label="Visit our LinkedIn page"
+                      >
+                        <i class="fa-brands fa-linkedin-in"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href=""
+                        target="_blank"
+                        aria-label="Visit our Twitter page"
+                      >
+                        <i class="fa-brands fa-x-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href=""
+                        target="_blank"
+                        aria-label="Visit our Instagram page"
+                      >
+                        <i class="fa-brands fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href=""
+                        target="_blank"
+                        aria-label="Visit our Facebook page"
+                      >
+                        <i class="fa-brands fa-facebook-f"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-5">
+              <div class="d-flex gap-4 justify-content-between">
+                <div>
+                  <h4 class="fs-6">روابط سريعة</h4>
+                  <ul class="navbar-nav mb-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="about.html">نبذة عنا</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="finance.html">التمويل</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="cars.html">السيارات</a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="fs-6">الدعم</h4>
+                  <ul class="navbar-nav mb-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="terms.html">الشروط والأحكام</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="policy.html"
+                        >سياسة الخصوصية</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="copyrights">
+          <div
+            class="d-flex gap-1 w-100 align-items-center justify-content-center"
+          >
+            <a href="https://smartvision4p.com" class="link" target="_blank">
+            </a>
+            <h2>كل الحقوق محفوظة لشركة سمارت فيجن</h2>
+            <img src="images/smart-logo.svg" alt="شركة سمارت فيجن" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"
+      integrity="sha512-MSOo1aY+3pXCOCdGAYoBZ6YGI0aragoQsg1mKKBHXCYPIWxamwOE7Drh+N5CPgGI5SA9IEKJiPjdfqWFWmZtRA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- bootstrap script -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- owl-carousel script -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- select2 script -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
