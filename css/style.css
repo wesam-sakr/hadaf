@@ -68,6 +68,7 @@
 .blog-date small,
 .step_num,
 .partner_count,
+.input-group-text.num,
 .projects .card-title,
 .projects .card-text {
    font-family: "Urbanist", sans-serif;
@@ -309,15 +310,16 @@ option {
 .form-control,
 .form-select {
    background-color: transparent !important;
-   border: 0.8px solid rgba(var(--whiteOp), .08);
+   border: 1px solid #49494E;
    color: var(--white) !important;
    box-shadow: unset !important;
-   padding-block: .5rem;
-   border-radius: .5rem;
-   -webkit-border-radius: .5rem;
-   -moz-border-radius: .5rem;
-   -ms-border-radius: .5rem;
-   -o-border-radius: .5rem;
+   padding-inline: 1.25rem;
+   padding-block: .65rem;
+   border-radius: 0.4375rem;
+   -webkit-border-radius: 0.4375rem;
+   -moz-border-radius: 0.4375rem;
+   -ms-border-radius: 0.4375rem;
+   -o-border-radius: 0.4375rem;
    font-weight: 300;
 }
 
@@ -586,11 +588,12 @@ option {
    padding-block: 15rem 25rem;
 }
 
-.special-breadcrumb{
+.special-breadcrumb {
    padding-block: 10rem 0rem;
    text-align: center;
 }
-.special-breadcrumb img{
+
+.special-breadcrumb img {
    border-radius: 0.75rem;
    aspect-ratio: 3/1;
 }
@@ -924,7 +927,8 @@ option {
    object-fit: cover;
    height: 100%;
 }
-.about-section figure{
+
+.about-section figure {
    height: 100%;
 }
 
@@ -940,7 +944,7 @@ option {
    font-weight: 400;
 }
 
-.solutions .card{
+.solutions .card {
    border-bottom: 1px solid rgba(var(--whiteOp), 0.10);
    padding-block: 1rem;
 }
@@ -1049,6 +1053,7 @@ option {
    -webkit-box-orient: vertical;
    overflow: hidden;
 }
+
 .services.service_features .card .card-desc p {
    display: block;
    overflow: visible;
@@ -1288,6 +1293,7 @@ footer {
    justify-content: flex-start;
 }
 
+.contact-data .navbar-nav .nav-link,
 .footer-nav .navbar .navbar-nav .nav-link {
    color: rgba(var(--whiteOp), 0.6) !important;
    padding: .5rem 0;
@@ -1383,9 +1389,10 @@ input::placeholder {
 }
 
 
-.contact-data label {
-   font-weight: 300;
-   font-size: .9rem;
+.contact-data form label {
+   font-weight: 500;
+   font-size: 1.1rem;
+   margin-bottom: .8rem !important;
 }
 
 .box_wrapper {
@@ -1492,6 +1499,10 @@ input::placeholder {
 
    .partner_statistics {
       padding-block: 1rem 1.5rem;
+   }
+
+   .special-breadcrumb img {
+      aspect-ratio: 2 / 1;
    }
 
    .logo-wrapper img {
