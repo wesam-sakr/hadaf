@@ -1019,6 +1019,88 @@ option {
    font-weight: 500;
 }
 
+.project-title {
+   font-size: 1.5rem;
+   font-weight: 500;
+   letter-spacing: -0.00656rem;
+   line-height: 1.8;
+   margin-bottom: 1rem;
+}
+
+.project-txt {
+   color: #B3B3B3;
+   font-size: 1.25rem;
+   font-weight: 300;
+}
+
+/* ------------- vid section --------------- */
+.video-wrap {
+   position: relative;
+   margin-bottom: 2rem;
+}
+
+.video-wrap::after {
+   content: '';
+   position: absolute;
+   inset: 0;
+   background: rgba(var(--blackOp), .5);
+   width: 100%;
+   height: 100%;
+   z-index: 2;
+   border-radius: 20px !important;
+   -webkit-border-radius: 20px !important;
+   -moz-border-radius: 20px !important;
+   -ms-border-radius: 20px !important;
+   -o-border-radius: 20px !important;
+}
+
+.project_details img,
+.video-wrap .video-cover-img {
+   border-radius: 20px;
+   overflow: hidden;
+   aspect-ratio: 5/5;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   -ms-border-radius: 20px;
+   -o-border-radius: 20px;
+}
+
+.video-wrap .video-cover-img img {
+   width: 100%;
+   height: 100%;
+   transition: .4s;
+}
+
+.video-wrap:hover img {
+   transform: scale(1.05);
+   -webkit-transform: scale(1.05);
+   -moz-transform: scale(1.05);
+   -ms-transform: scale(1.05);
+   -o-transform: scale(1.05);
+}
+
+.video-wrap .op-video {
+   position: absolute;
+   inset-inline-end: 50%;
+   z-index: 6;
+   top: 50%;
+   width: 3.125rem;
+   aspect-ratio: 1/1;
+   border-radius: 100%;
+   text-align: center;
+   background: rgba(var(--whiteOp), .3);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: var(--white) !important;
+   font-size: 1.125rem;
+   transform: translate(-50%, -50%);
+   -webkit-transform: translate(-50%, -50%);
+   -moz-transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+   -o-transform: translate(-50%, -50%);
+}
+
 /*==-------- services --------==*/
 .projects .card.all-projs,
 .services .card {
@@ -1269,15 +1351,16 @@ option {
    border-radius: 0.5rem;
    background: var(--white, #FFF);
 }
+
 .blog_details .category *,
-.blog_details .date *{
+.blog_details .date * {
    color: #101010;
 }
 
 .blog_details .blog_content :not(:is(h1, h2, h3, h4, h5, h6)) {
-  color: #B3B3B3;
-  font-size: 1.02rem;
-  margin-bottom: .5rem;
+   color: #B3B3B3;
+   font-size: 1.02rem;
+   margin-bottom: .5rem;
 }
 
 .blog_details .blog_content ul {

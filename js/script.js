@@ -53,22 +53,23 @@ $(document).ready(function () {
     }
   });
 
-  // سلايدر الخدمات
-  const track = document.getElementById("textTrack");
-  const items = track.children;
-  const itemHeight = items[0].offsetHeight;
-  let index = 0;
+  if ($('#textTrack').length > 1) {
+    // سلايدر الخدمات
+    const track = document.getElementById("textTrack");
+    const items = track.children;
+    const itemHeight = items[0].offsetHeight;
+    let index = 0;
 
-  setInterval(() => {
-    index++;
+    setInterval(() => {
+      index++;
 
-    if (index >= items.length) {
-      index = 0;
-    }
+      if (index >= items.length) {
+        index = 0;
+      }
 
-    track.style.transform = `translateY(-${index * itemHeight}px)`;
-  }, 2500);
-
+      track.style.transform = `translateY(-${index * itemHeight}px)`;
+    }, 2500);
+  }
 
   $(".hero-sec .cars-slider.owl-carousel").owlCarousel({
     nav: false,
@@ -120,29 +121,31 @@ $(document).ready(function () {
 
   });
 
-
-  $(".projects .owl-carousel").owlCarousel({
-    nav: false,
-    loop: true,
-    autoplay: true,
-    responsiveClass: true,
-    stagePadding: 120,
-    items: 1,
-    margin: 16,
-    rtl: dirAr,
-    responsive: {
-      0: {
-        stagePadding: 20,
-      },
-      768: {
-        stagePadding: 60,
-      },
-      992: {
-        stagePadding: 80,
+  $(".projects .owl-carousel").each(function () {
+    const itemsCount = $(this).data("items");
+    $(this).owlCarousel({
+      nav: false,
+      loop: true,
+      autoplay: true,
+      responsiveClass: true,
+      stagePadding: 120,
+      items: 1,
+      margin: 16,
+      rtl: dirAr,
+      responsive: {
+        0: {
+          stagePadding: 20,
+        },
+        768: {
+          stagePadding: 60,
+        },
+        992: {
+          stagePadding: 80,
+          items: itemsCount,
+        }
       }
-    }
-
-  });
+    });
+  })
 
   $(".testimonials .owl-carousel").owlCarousel({
     nav: false,
