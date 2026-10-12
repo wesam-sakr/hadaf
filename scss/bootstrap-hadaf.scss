@@ -1,0 +1,42 @@
+// =========================================================
+// Bootstrap 5.3.3 — نسخة مخصوصة لهداف (بس الأجزاء المستخدمة)
+// البناء:  npm install  ثم  npm run build:css
+// الناتج:  css/bootstrap.hadaf.rtl.min.css
+// محتاج component جديد في صفحة؟ شيل الـ // من قدام السطر بتاعه وابني تاني.
+// =========================================================
+
+// إعدادات
+$enable-dark-mode: false;
+$enable-smooth-scroll: false;   // بنتحكم فيه من main.css
+
+// 1. Configuration
+@import "functions";
+@import "variables";
+@import "maps";
+@import "mixins";
+@import "utilities";
+
+// 2. Layout & base
+@import "root";
+@import "reboot";
+// @import "type";
+// @import "images";
+@import "containers";
+@import "grid";
+@import "helpers";          // visually-hidden, stretched-link, ...
+
+// 3. Components المستخدمة
+@import "buttons";
+@import "transitions";      // collapse (الأكورديون)
+@import "accordion";        // الأسئلة الشائعة
+@import "offcanvas";        // منيو الموبايل
+// @import "close";
+@import "forms";            // صفحة تواصل معنا
+// @import "nav";
+// @import "card";
+// @import "modal";
+@import "pagination";       // المدونة / المشاريع
+// @import "breadcrumb";
+
+// 4. Utilities (d-flex, gap-*, mt-*, text-center, ...)
+@import "utilities/api";

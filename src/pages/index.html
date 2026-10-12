@@ -1,0 +1,147 @@
+<!--
+title: هداف | وكالة إبداعية للتسويق والهوية البصرية
+description: هداف وكالة إبداعية تساعد العلامات التجارية على بناء حضور أقوى من خلال الاستراتيجية، التصميم، المحتوى والتسويق.
+nav: home
+swiper: 1
+-->
+<!-- @section head -->
+    <!-- الانترو يظهر مرة واحدة في اليوم: القرار هنا قبل ما الصفحة تترسم عشان ما يحصلش flash -->
+    <script>
+      (function () {
+        try {
+          var d = new Date(), today = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+          var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (!reduce && localStorage.getItem("hadafIntroDate") !== today) {
+            document.documentElement.classList.add("show-intro");
+            localStorage.setItem("hadafIntroDate", today);
+          }
+        } catch (e) {}
+      })();
+    </script>
+<!-- @section top -->
+    <!-- ================= Intro (مرة في اليوم) ================= -->
+    <div class="intro" id="intro" role="dialog" aria-modal="true" aria-label="فيديو تعريفي بهداف">
+      <video class="intro-video" id="introVideo" playsinline preload="none" aria-hidden="true">
+        <source data-src="videos/intro.mp4" data-src-mobile="videos/intro-mobile.mp4" type="video/mp4" />
+      </video>
+      <div class="intro-controls">
+        <button class="icon-btn" id="introSound" type="button" aria-label="تشغيل الصوت">
+          <svg class="icon" aria-hidden="true"><use href="#i-volume-mute-fill"/></svg>
+        </button>
+        <button class="btn btn-main intro-skip" id="introSkip" type="button">
+          تخطي <svg class="icon" aria-hidden="true"><use href="#i-skip-forward-fill"/></svg>
+        </button>
+      </div>
+    </div>
+<!-- @section hero -->
+    <!-- ================= Hero ================= -->
+    <section class="hero">
+      <!-- الفيديو بيبدأ يحمّل بعد الانترو / بعد ما الصفحة تخلص (data-src).
+           data-src-mobile = نسخة الموبايل (≤ 768px). الصورة اللي قبل الفيديو = خلفية .hero في الـ CSS -->
+      <video class="hero-video" id="heroVideo" loop playsinline preload="none" aria-hidden="true">
+        <source data-src="videos/hero.mp4" data-src-mobile="videos/hero-mobile.mp4" type="video/mp4" />
+      </video>
+      <button class="icon-btn sound-toggle" id="soundToggle" type="button" aria-label="تشغيل الصوت">
+        <svg class="icon" aria-hidden="true"><use href="#i-volume-mute-fill"/></svg>
+      </button>
+      <div class="hero-content">
+        <h1>وجهتك الأولى لإدارة وكالتك التسويقية مع فريق يضم أفضل الخبرات التقنية</h1>
+        <a href="contact_us.html" class="btn btn-main">استشــــارة مجــــــانية</a>
+      </div>
+    </section>
+<!-- @section main -->
+      <!-- ================= About ================= -->
+      <section class="section about-intro" aria-labelledby="aboutTitle">
+        <span class="blob blob--about" aria-hidden="true"></span>
+        <div class="container">
+          <div class="row-top reveal">
+            <span class="chip sm">من نحن</span>
+            <div class="intro-text">
+              <h2 class="sec-title" id="aboutTitle">نحن لا نصنع محتوى فقط، <span class="hl">نصنع أثرًا</span></h2>
+              <p class="lead-muted">
+                هداف وكالة إبداعية تساعد العلامات التجارية على بناء حضور أقوى من خلال الاستراتيجية، التصميم، المحتوى والتسويق. هداف وكالة إبداعية تساعد العلامات التجارية على بناء حضور أقوى من خلال الاستراتيجية، التصميم، المحتوى والتسويق.
+              </p>
+              <a href="about_us.html" class="btn btn-main">المزيد عن هـــداف</a>
+            </div>
+          </div>
+
+          <div class="row g-4 about-media reveal">
+            <div class="col-lg-6">
+              <div class="card-tint">
+                هداف وكالة إبداعية تساعد العلامات التجارية على بناء حضور أقوى من خلال الاستراتيجية، التصميم، المحتوى والتسويق. هداف وكالة إبداعية تساعد العلامات التجارية على بناء حضور أقوى من خلال الاستراتيجية، التصميم، المحتوى والتسويق.
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="media media-fill"><img src="images/new/about-falcons.webp" srcset="images/new/about-falcons-sm.webp 640w, images/new/about-falcons.webp 1809w" sizes="(min-width: 992px) 50vw, calc(100vw - 32px)" alt="صقور هداف مع كلمات Social Media و Ads و Branding و SEO" width="1809" height="753" loading="lazy" decoding="async" /></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- @include services media="1" class=" services--preview" -->
+
+      <!-- ================= Projects =================
+           كل الكروت نفس الـ markup. .featured-first على الـ row = أول مشروع بياخد العرض كله.
+           (أو حط .project-card--wide على أي كارت لو عايزه كبير في أي مكان) -->
+      <section class="section" aria-labelledby="projectsTitle">
+        <span class="blob blob--projects" aria-hidden="true"></span>
+        <div class="container">
+          <div class="sec-head start tight reveal">
+            <span class="chip">مشاريعنــــــا</span>
+            <div class="head-row">
+              <h2 class="sec-title" id="projectsTitle">أعمال تتحدث عن نفسها</h2>
+              <div class="filters" role="group" aria-label="تصفية المشاريع" data-filter-group="#projectsGrid">
+                <button type="button" class="btn active" data-filter="all" aria-pressed="true">الكل</button>
+                <button type="button" class="btn" data-filter="identity" aria-pressed="false">الهوية البصرية</button>
+                <button type="button" class="btn" data-filter="content" aria-pressed="false">المحتوى</button>
+                <button type="button" class="btn" data-filter="marketing" aria-pressed="false">التسويق</button>
+                <button type="button" class="btn" data-filter="web" aria-pressed="false">المواقع</button>
+                <button type="button" class="btn" data-filter="uiux" aria-pressed="false">UI/UX</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4 projects-grid featured-first reveal" id="projectsGrid">
+            <!-- loop: project (partials/project-card.html) -->
+            <!-- @include project-card cat="identity" tag="الهوية" title="نوفا كابيتال" text="إعادة بناء هوية مؤسسة استثمارية لتنتقل من الرسمية الجامدة إلى الثقة الحديثة." img="project-1.webp" sm="project-1-sm.webp" w="1319" h="753" -->
+            <!-- @include project-card -->
+            <!-- @include project-card -->
+            <!-- /loop -->
+          </div>
+
+          <div class="text-center mt-5">
+            <a href="projects.html" class="btn btn-main">عرض جميع المشاريع</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= Blog =================
+           نفس كارت .blog-card. .featured-first = أول مقال بالشكل الأفقي.
+           (أو .blog-card--horizontal على أي كارت) -->
+      <section class="section" aria-labelledby="blogTitle">
+        <div class="container">
+          <div class="sec-head start reveal">
+            <span class="chip">المدونة</span>
+            <div class="head-row">
+              <h2 class="sec-title" id="blogTitle">أحدث المقـــــالات</h2>
+              <a href="blogs.html" class="btn btn-main d-none d-md-inline-flex">جميع المقالات</a>
+            </div>
+          </div>
+
+          <div class="row g-4 blog-grid featured-first reveal">
+            <!-- loop: post (partials/blog-card.html) -->
+            <!-- @include blog-card col="col-12 col-lg-4" img="blog-phones-tall.webp" w="586" h="678" -->
+            <!-- @include blog-card col="col-12 col-lg-4" img="blog-network.webp" -->
+            <!-- /loop -->
+          </div>
+          <div class="text-center mt-4 d-md-none">
+            <a href="blogs.html" class="btn btn-main">جميع المقالات</a>
+          </div>
+        </div>
+      </section>
+
+<!-- @include text-marquee -->
+
+<!-- @include testimonials -->
+
+<!-- @include faq -->

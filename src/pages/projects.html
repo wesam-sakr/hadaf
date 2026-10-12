@@ -1,0 +1,44 @@
+<!--
+title: مشاريعنا | هداف
+description: أعمال هداف في الهوية البصرية، المحتوى، التسويق، المواقع وتصميم واجهات المستخدم — أعمال تتحدث عن نفسها.
+nav: projects
+-->
+<!-- @section hero -->
+<!-- @include page-hero heroTitle="مشاريعنــــا" -->
+
+<!-- @section main -->
+      <!-- ================= Projects =================
+           نفس الكارت (partials/project-card.html). .featured-first = أول مشروع بالعرض كله -->
+      <section class="section" aria-labelledby="projectsTitle">
+        <span class="blob blob--projects" aria-hidden="true"></span>
+        <div class="container">
+          <div class="sec-head start tight reveal">
+            <span class="chip">مشاريعنــــا</span>
+            <div class="head-row">
+              <h2 class="sec-title" id="projectsTitle">أعمال تتحدث عن نفسها</h2>
+              <div class="filters" role="group" aria-label="تصفية المشاريع" data-filter-group="#projectsGrid">
+                <button type="button" class="btn active" data-filter="all" aria-pressed="true">الكل</button>
+                <button type="button" class="btn" data-filter="identity" aria-pressed="false">الهوية البصرية</button>
+                <button type="button" class="btn" data-filter="content" aria-pressed="false">المحتوى</button>
+                <button type="button" class="btn" data-filter="marketing" aria-pressed="false">التسويق</button>
+                <button type="button" class="btn" data-filter="web" aria-pressed="false">المواقع</button>
+                <button type="button" class="btn" data-filter="uiux" aria-pressed="false">UI/UX</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4 projects-grid featured-first" id="projectsGrid">
+            <!-- loop: project -->
+            <!-- @include project-card cat="identity" tag="الهوية" title="نوفا كابيتال" text="إعادة بناء هوية مؤسسة استثمارية لتنتقل من الرسمية الجامدة إلى الثقة الحديثة." img="project-1.webp" sm="project-1-sm.webp" w="1319" h="753" -->
+            <!-- @include project-card -->
+            <!-- @include project-card cat="content" tag="المحتوى" -->
+            <!-- @include project-card cat="web" tag="المواقع" -->
+            <!-- @include project-card cat="uiux" tag="UI/UX" -->
+            <!-- @include project-card cat="identity" tag="الهوية" -->
+            <!-- @include project-card -->
+            <!-- /loop -->
+          </div>
+
+<!-- @include pagination label="صفحات المشاريع" -->
+        </div>
+      </section>

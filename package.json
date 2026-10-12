@@ -1,0 +1,15 @@
+{
+  "name": "hadaf",
+  "private": true,
+  "scripts": {
+    "build:css": "sass --no-source-map --style=compressed --load-path=node_modules/bootstrap/scss scss/bootstrap-hadaf.scss css/bootstrap.hadaf.min.css && rtlcss css/bootstrap.hadaf.min.css css/bootstrap.hadaf.rtl.min.css && rm css/bootstrap.hadaf.min.css",
+    "build:html": "node tools/build-html.mjs",
+    "watch:html": "node tools/build-html.mjs --watch",
+    "build": "npm run build:css && npm run build:html"
+  },
+  "devDependencies": {
+    "bootstrap": "5.3.3",
+    "rtlcss": "^4.3.0",
+    "sass": "^1.80.0"
+  }
+}

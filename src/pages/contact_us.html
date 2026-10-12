@@ -1,0 +1,86 @@
+<!--
+title: تواصل معنا | هداف
+description: تواصل مع هداف — أرسل لنا فكرتك أو استفسارك وسيتواصل معك فريقنا في أقرب وقت.
+nav: contact
+-->
+<!-- @section hero -->
+<!-- @include page-hero heroTitle="تواصل معنــا" -->
+
+<!-- @section main -->
+      <!-- ================= Contact ================= -->
+      <section class="section" aria-label="بيانات التواصل ونموذج المراسلة">
+        <div class="container">
+          <div class="contact-wrap">
+            <div class="row g-4 g-lg-5 align-items-start">
+              <div class="col-lg-5">
+                <ul class="contact-info pt-lg-3">
+                  <li>
+                    <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-at"/></svg></span>
+                    <div><h2>بريد إلكتروني:</h2><a href="mailto:hello@hadaaf.com" translate="no">hello@hadaaf.com</a></div>
+                  </li>
+                  <li>
+                    <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-geo-alt"/></svg></span>
+                    <div><h2>عنوان:</h2><p>١٢٣ شارع مابل وود،<br />الولايات المتحدة الأمريكية</p></div>
+                  </li>
+                  <li>
+                    <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-telephone"/></svg></span>
+                    <div><h2>هاتف:</h2><a href="tel:+90620930087" dir="ltr">+906 2093 0087</a><br /><a href="tel:+90620930087" dir="ltr">+906 2093 0087</a></div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-lg-7 form-col">
+                <div class="form-card">
+                  <div class="head">
+                    <span class="chip sm">تواصل معنــا</span>
+                    <h2>إرسل لنا الأن <span class="hl">إقتراحاتك</span></h2>
+                  </div>
+                  <!-- TODO(backend): action + @csrf -->
+                  <form class="form-hadaf row g-4" id="contactForm" novalidate>
+                    <div class="col-6">
+                      <label class="form-label" for="cFirst">الاسم الأول*</label>
+                      <input class="form-control" id="cFirst" name="first_name" type="text" autocomplete="given-name" placeholder="أدخل اسمك" required />
+                      <div class="invalid-feedback">اكتب اسمك الأول.</div>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label" for="cLast">الاسم الأخير*</label>
+                      <input class="form-control" id="cLast" name="last_name" type="text" autocomplete="family-name" placeholder="أدخل اسمك" required />
+                      <div class="invalid-feedback">اكتب اسمك الأخير.</div>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label" for="cPhone">رقم الهاتف</label>
+                      <input class="form-control" id="cPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="auto" placeholder="ادخل رقم الهاتف" />
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label" for="cEmail">البريد إلكتروني*</label>
+                      <input class="form-control" id="cEmail" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" dir="auto" placeholder="بريدك الإلكتروني" required />
+                      <div class="invalid-feedback">اكتب بريد إلكتروني صحيح، مثال: name@example.com</div>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label" for="cService">الخدمة التي تحتاجها*</label>
+                      <select class="form-select" id="cService" name="service" required>
+                        <option value="" selected disabled>اختر الخدمة التي تناسبك</option>
+                        <option>الهوية البصرية</option>
+                        <option>صناعة المحتوى</option>
+                        <option>الحملات الإعلانية</option>
+                        <option>التسويق الرقمي</option>
+                        <option>تحسين محركات البحث</option>
+                        <option>تصميم الجرافيك</option>
+                      </select>
+                      <div class="invalid-feedback">اختر الخدمة.</div>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label" for="cMsg">رسالتك</label>
+                      <textarea class="form-control" id="cMsg" name="message" rows="5" placeholder="اكتب رسالتك"></textarea>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-main w-100">إرسال</button>
+                      <p class="form-msg" aria-live="polite"></p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

@@ -1,0 +1,44 @@
+    <!-- ================= Header ================= -->
+    <header class="site-header">
+      <nav class="nav-inner" aria-label="القائمة الرئيسية">
+        <a href="index.html" class="brand" aria-label="هداف — الرئيسية">
+          <img src="images/logo.min.svg" alt="هداف" width="74" height="69" />
+        </a>
+        <ul class="main-nav d-none d-xl-flex">
+          <li><a href="index.html" data-nav="home">الرئيسية</a></li>
+          <li><a href="about_us.html" data-nav="about">من نحن</a></li>
+          <li><a href="services.html" data-nav="services">الخدمات</a></li>
+          <li><a href="projects.html" data-nav="projects">مشاريعنــــــــــا</a></li>
+          <li><a href="blogs.html" data-nav="blogs">المدونة</a></li>
+          <li><a href="contact_us.html" data-nav="contact">تواصل معنـــــا</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <a href="contact_us.html" class="btn btn-main d-none d-sm-inline-flex">استشــــارة مجــــــانية</a>
+          <button class="icon-btn d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu" aria-label="فتح القائمة">
+            <svg class="icon" aria-hidden="true"><use href="#i-list"/></svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile menu (Bootstrap offcanvas — full screen زي Figma) -->
+    <div class="offcanvas offcanvas-top menu-offcanvas" tabindex="-1" id="menu" aria-labelledby="menuLabel">
+      <div class="offcanvas-header">
+        <img src="images/logo.min.svg" alt="" width="60" height="57" />
+        <h2 class="visually-hidden" id="menuLabel">القائمة</h2>
+        <button type="button" class="icon-btn" data-bs-dismiss="offcanvas" aria-label="إغلاق القائمة">
+          <svg class="icon" aria-hidden="true"><use href="#i-x-lg"/></svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <ul>
+          <li><a href="index.html" data-nav="home">الرئيسية</a></li>
+          <li><a href="about_us.html" data-nav="about">من نحن</a></li>
+          <li><a href="services.html" data-nav="services">الخدمات</a></li>
+          <li><a href="projects.html" data-nav="projects">مشاريعنا</a></li>
+          <li><a href="blogs.html" data-nav="blogs">المدونة</a></li>
+          <li><a href="contact_us.html" data-nav="contact">تواصل معنا</a></li>
+        </ul>
+        <a href="contact_us.html" class="btn btn-main w-100">استشــــارة مجــــــانية</a>
+      </div>
+    </div>

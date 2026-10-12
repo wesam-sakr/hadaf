@@ -1,0 +1,53 @@
+<!doctype html>
+<!-- ⚠️ ملف متولّد من src/ — عدّل في src/pages/{{page}} أو src/partials ثم: npm run build:html -->
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}" />
+    <meta name="theme-color" content="#1a1b1e" />
+    <link rel="icon" type="image/svg+xml" href="images/logo.min.svg" />
+
+    <!-- Bootstrap RTL (نسخة مخصوصة — scss/bootstrap-hadaf.scss) -->
+    <link rel="stylesheet" href="css/bootstrap.hadaf.rtl.min.css" />
+<!-- @if swiper -->
+    <!-- Swiper (مش محتاجينه أول ما الصفحة تفتح → بيحمّل من غير ما يوقف العرض) -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="css/swiper-bundle.min.css" /></noscript>
+<!-- @endif -->
+    <!-- خط العنوان الكبير (600) — preload عشان ما يعملش layout shift -->
+    <link rel="preload" href="css/fonts/plex/ibm-plex-sans-arabic-arabic-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+<!-- @if pageHero -->
+    <!-- خلفية الـ page hero هي الـ LCP في الصفحات الداخلية → preload حسب الشاشة -->
+    <link rel="preload" as="image" href="images/new/page-hero-mobile.webp" media="(max-width: 767.98px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="images/new/page-hero.webp" media="(min-width: 768px)" fetchpriority="high" />
+<!-- @endif -->
+<!-- @if fancybox -->
+    <!-- Fancybox (معرض الصور) — بيحمّل من غير ما يوقف العرض -->
+    <link rel="stylesheet" href="css/fancybox.css" media="print" onload="this.media='all'" />
+<!-- @endif -->
+    <link rel="stylesheet" href="css/main.css" />
+    {{head}}
+  </head>
+  <body>
+<!-- @include sprite -->
+    <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+    {{top}}
+<!-- @include header -->
+    {{hero}}
+    <main id="main" tabindex="-1">
+      {{main}}
+    </main>
+<!-- @include footer -->
+
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+<!-- @if swiper -->
+    <script src="js/swiper-bundle.min.js" defer></script>
+<!-- @endif -->
+<!-- @if fancybox -->
+    <script src="js/fancybox.umd.js" defer></script>
+<!-- @endif -->
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

@@ -1,500 +1,446 @@
 <!doctype html>
+<!-- ⚠️ ملف متولّد من src/ — عدّل في src/pages/about_us.html أو src/partials ثم: npm run build:html -->
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hadaf</title>
+    <title>من نحن | هداف</title>
+    <meta name="description" content="تعرّف على هداف — وكالة إبداعية تساعد العلامات التجارية على بناء حضور أقوى من خلال الاستراتيجية، التصميم، المحتوى والتسويق." />
+    <meta name="theme-color" content="#1a1b1e" />
+    <link rel="icon" type="image/svg+xml" href="images/logo.min.svg" />
 
-    <link rel="icon" type="image/x-icon" href="images/logo.svg" />
+    <!-- Bootstrap RTL (نسخة مخصوصة — scss/bootstrap-hadaf.scss) -->
+    <link rel="stylesheet" href="css/bootstrap.hadaf.rtl.min.css" />
 
-    <!-- Bootstrap link  -->
-    <link
-      rel="stylesheet"
-      href="css/bootstrap.rtl.min.css"
-      id="bootstrap-style"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
-      integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <!-- Swiper (مش محتاجينه أول ما الصفحة تفتح → بيحمّل من غير ما يوقف العرض) -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="css/swiper-bundle.min.css" /></noscript>
 
-    <!-- font awesom link  -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <!-- خط العنوان الكبير (600) — preload عشان ما يعملش layout shift -->
+    <link rel="preload" href="css/fonts/plex/ibm-plex-sans-arabic-arabic-600-normal.woff2" as="font" type="font/woff2" crossorigin />
 
-    <!-- owl-carousel link -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <!-- خلفية الـ page hero هي الـ LCP في الصفحات الداخلية → preload حسب الشاشة -->
+    <link rel="preload" as="image" href="images/new/page-hero-mobile.webp" media="(max-width: 767.98px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="images/new/page-hero.webp" media="(min-width: 768px)" fetchpriority="high" />
 
-    <!-- select2 link -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- fancybox link -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
-    />
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    
   </head>
-
   <body>
-    <header class="header">
-      <div class="container-fluid">
-        <!-- Logo -->
-        <div class="logo">
-          <a href="index.html" class="brand-link">
-            <img src="images/logo.svg" alt="هدّاف" />
-          </a>
-        </div>
+    <!-- Icon sprite (Bootstrap Icons as SVG) — استخدام: <svg class="icon"><use href="#i-NAME"/></svg> -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none" aria-hidden="true">
+      <symbol id="i-arrow-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/></symbol>
+      <symbol id="i-arrow-up-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0z"/></symbol>
+      <symbol id="i-calendar3" viewBox="0 0 16 16"><path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z"/> <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/></symbol>
+      <symbol id="i-envelope" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 16 16"><path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/> <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></symbol>
+      <symbol id="i-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></symbol>
+      <symbol id="i-palette" viewBox="0 0 16 16"><path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/> <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8m-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7"/></symbol>
+      <symbol id="i-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></symbol>
+      <symbol id="i-twitter" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/></symbol>
+      <symbol id="i-volume-mute-fill" viewBox="0 0 16 16"><path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06m7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0"/></symbol>
+      <symbol id="i-volume-up-fill" viewBox="0 0 16 16"><path d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z"/> <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.48 5.48 0 0 1 11.025 8a5.48 5.48 0 0 1-1.61 3.89z"/> <path d="M8.707 11.182A4.5 4.5 0 0 0 10.025 8a4.5 4.5 0 0 0-1.318-3.182L8 5.525A3.5 3.5 0 0 1 9.025 8 3.5 3.5 0 0 1 8 10.475zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06"/></symbol>
+      <symbol id="i-x-lg" viewBox="0 0 16 16"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/></symbol>
+      <symbol id="i-skip-forward-fill" viewBox="0 0 16 16"><path d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.753l-6.267 3.636c-.54.313-1.233-.066-1.233-.697v-2.94l-6.267 3.636C.693 12.703 0 12.324 0 11.693V4.308c0-.63.693-1.01 1.233-.696L7.5 7.248v-2.94c0-.63.693-1.01 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5"/></symbol>
+      <symbol id="i-at" viewBox="0 0 16 16"> <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914"/> </symbol>
+      <symbol id="i-geo-alt" viewBox="0 0 16 16"> <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/> <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/> </symbol>
+      <symbol id="i-telephone" viewBox="0 0 16 16"> <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/> </symbol>
+      <symbol id="i-share" viewBox="0 0 16 16"> <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5m-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"/> </symbol>
+      <symbol id="i-link-45deg" viewBox="0 0 16 16"> <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/> <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/> </symbol>
+      <symbol id="i-check-circle" viewBox="0 0 16 16"> <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/> <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/> </symbol>
+      <symbol id="i-clipboard-data-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zM10 8a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm4-3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1"/> </symbol>
+      <symbol id="i-graph-up-arrow" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/> </symbol>
+      <symbol id="i-rocket-takeoff-fill" viewBox="0 0 16 16"> <path d="M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.6 3.6 0 0 0-.108-.563 2 2 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2 2 0 0 0-.16-.045 4 4 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.55 2.55 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361s.437 1.732-.36 2.531Z"/> <path d="M5.205 10.787a7.6 7.6 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925"/> </symbol>
+      <symbol id="i-bullseye" viewBox="0 0 16 16"> <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/> <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10m0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/> <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8"/> <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/> </symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/> </symbol>
+      <symbol id="i-quote" viewBox="0 0 16 16"> <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/> </symbol>
+      <symbol id="i-chevron-down" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/> </symbol>
+    </svg>
 
+    <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+    
+    <!-- ================= Header ================= -->
+    <header class="site-header">
+      <nav class="nav-inner" aria-label="القائمة الرئيسية">
+        <a href="index.html" class="brand" aria-label="هداف — الرئيسية">
+          <img src="images/logo.min.svg" alt="هداف" width="74" height="69" />
+        </a>
+        <ul class="main-nav d-none d-xl-flex">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about_us.html" class="active" aria-current="page">من نحن</a></li>
+          <li><a href="services.html">الخدمات</a></li>
+          <li><a href="projects.html">مشاريعنــــــــــا</a></li>
+          <li><a href="blogs.html">المدونة</a></li>
+          <li><a href="contact_us.html">تواصل معنـــــا</a></li>
+        </ul>
         <div class="d-flex align-items-center gap-2">
-          <!-- Button -->
-          <a href="#" class="main-btn">
-            استشارة مجانية
-            <i class="bi bi-arrow-left"></i>
-          </a>
-
-          <!-- Burger -->
-          <button class="burger" id="burgerBtn">
-            <img src="images/menu.svg" alt="" />
+          <a href="contact_us.html" class="btn btn-main d-none d-sm-inline-flex">استشــــارة مجــــــانية</a>
+          <button class="icon-btn d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu" aria-label="فتح القائمة">
+            <svg class="icon" aria-hidden="true"><use href="#i-list"/></svg>
           </button>
         </div>
-      </div>
-
-      <!-- Overlay Menu -->
-      <div class="menu-overlay" id="menuOverlay">
-        <nav class="menu-box">
-          <button class="close-btn" id="closeMenu">✕</button>
-          <ul class="menu-links">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link"> الرئيسية </a>
-            </li>
-            <li class="nav-item">
-              <a href="about_us.html" class="nav-link"> من نحن </a>
-            </li>
-            <li class="nav-item">
-              <a href="projects.html" class="nav-link"> مشاريعنا </a>
-            </li>
-            <li class="nav-item">
-              <a href="services.html" class="nav-link"> خدماتنا </a>
-            </li>
-            <li class="nav-item">
-              <a href="blogs.html" class="nav-link"> المدونة </a>
-            </li>
-            <li class="nav-item">
-              <a href="contact_us.html" class="nav-link"> تواصل معنا </a>
-            </li>
-          </ul>
-          <div class="social">
-            <span class="d-block fw-semibold mb-2">Social Media:</span>
-            <nav aria-label="Social Media Links">
-              <ul class="social-icons">
-                <li>
-                  <a
-                    href=""
-                    target="_blank"
-                    aria-label="Visit our dribbble page"
-                  >
-                    <i class="bi bi-dribbble"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href=""
-                    target="_blank"
-                    aria-label="Visit our Facebook page"
-                  >
-                    <i class="fa-brands fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href=""
-                    target="_blank"
-                    aria-label="Visit our Twitter page"
-                  >
-                    <i class="fa-brands fa-x-twitter"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href=""
-                    target="_blank"
-                    aria-label="Visit our Instagram page"
-                  >
-                    <i class="fa-brands fa-instagram"></i>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </nav>
-      </div>
+      </nav>
     </header>
 
-    <section>
-      <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
-        <div class="container-fluid">
-          <div class="row gap-5 align-items-end justify-content-between">
-            <div class="col-md-auto">
-              <p class="breadcrumb-title mb-4">من نحن</p>
-              <p class="breadcrumb-title">وجهتك التسويقية الأولي</p>
-            </div>
-            <div class="col-lg-3">
-              <p class="fs-5">
-                إنطلق إلى السماء حدد أهدافك التسويقية من البداية مع هداف
+    <!-- Mobile menu (Bootstrap offcanvas — full screen زي Figma) -->
+    <div class="offcanvas offcanvas-top menu-offcanvas" tabindex="-1" id="menu" aria-labelledby="menuLabel">
+      <div class="offcanvas-header">
+        <img src="images/logo.min.svg" alt="" width="60" height="57" />
+        <h2 class="visually-hidden" id="menuLabel">القائمة</h2>
+        <button type="button" class="icon-btn" data-bs-dismiss="offcanvas" aria-label="إغلاق القائمة">
+          <svg class="icon" aria-hidden="true"><use href="#i-x-lg"/></svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about_us.html" class="active" aria-current="page">من نحن</a></li>
+          <li><a href="services.html">الخدمات</a></li>
+          <li><a href="projects.html">مشاريعنا</a></li>
+          <li><a href="blogs.html">المدونة</a></li>
+          <li><a href="contact_us.html">تواصل معنا</a></li>
+        </ul>
+        <a href="contact_us.html" class="btn btn-main w-100">استشــــارة مجــــــانية</a>
+      </div>
+    </div>
+
+        <!-- ================= Page hero (كل الصفحات الداخلية) ================= -->
+    <section class="page-hero">
+      <h1>من نحن</h1>
+      <div class="page-hero-badge" aria-hidden="true">
+        <img src="images/new/falcon-mark.webp" alt="" width="363" height="394" fetchpriority="high" decoding="async" />
+      </div>
+    </section>
+
+    <main id="main" tabindex="-1">
+      <!-- ================= About intro ================= -->
+      <section class="section about-intro" aria-labelledby="aboutTitle">
+        <span class="blob blob--about" aria-hidden="true"></span>
+        <div class="container">
+          <div class="row-top reveal">
+            <span class="chip sm">من نحن</span>
+            <div class="intro-text">
+              <h2 class="sec-title" id="aboutTitle">نحن لا نصنع محتوى فقط، <span class="hl">نصنع أثرًا</span></h2>
+              <p class="lead-muted">
+                هداف وكالة إبداعية تساعد العلامات التجارية على بناء حضور أقوى من خلال الاستراتيجية، التصميم، المحتوى والتسويق. وجهتك الأولى لإدارة وكالتك التسويقية مع فريق يضم أفضل الخبرات التقنية، قم بتوسيع نطاق نمو أعمالك وخفض التكاليف العامة من خلال الخدمات الخاصة بنا. وجهتك الأولى لإدارة وكالتك التسويقية مع فريق يضم أفضل الخبرات التقنية، قم بتوسيع نطاق نمو أعمالك وخفض التكاليف العامة من خلال الخدمات الخاصة بنا.
               </p>
+              <a href="projects.html" class="btn btn-main">اكتشف أعمالنا</a>
+            </div>
+          </div>
+
+          <div class="media-wide media-fill mt-5 reveal">
+            <img src="images/new/about-falcons.webp" srcset="images/new/about-falcons-sm.webp 640w, images/new/about-falcons.webp 1809w" sizes="(min-width: 1400px) 1320px, calc(100vw - 32px)" alt="صقور هداف مع كلمات Social Media و Ads و Branding و SEO" width="1809" height="753" loading="lazy" decoding="async" />
+          </div>
+
+          <!-- رسالتنا / قيمنا — نفس الكارت (.value-card) -->
+          <div class="row g-4 mt-0 reveal">
+            <div class="col-md-6">
+              <article class="value-card card-tint">
+                <img src="images/new/mark-badge.webp" alt="" width="70" height="70" loading="lazy" decoding="async" />
+                <h3>رسالتنــا</h3>
+                <p>نبني هوية تجعل علامتك واضحة، مميزة، وسهلة التذكر. نبني هوية تجعل علامتك واضحة، مميزة، وسهلة التذكر. نبني هوية تجعل علامتك واضحة، مميزة، وسهلة التذكر. نبني هوية تجعل علامتك واضحة، مميزة، وسهلة</p>
+              </article>
+            </div>
+            <div class="col-md-6">
+              <article class="value-card card-tint">
+                <img src="images/new/mark-badge.webp" alt="" width="70" height="70" loading="lazy" decoding="async" />
+                <h3>قيمنــا</h3>
+                <p>نبني هوية تجعل علامتك واضحة، مميزة، وسهلة التذكر. نبني هوية تجعل علامتك واضحة، مميزة، وسهلة التذكر. نبني هوية تجعل علامتك واضحة، مميزة، وسهلة التذكر. نبني هوية تجعل علامتك واضحة، مميزة، وسهلة</p>
+              </article>
             </div>
           </div>
         </div>
-      </nav>
-    </section>
+      </section>
 
-    <!-- من نحن -->
-    <section class="about-section py-5" aria-labelledby="about-title">
-      <div class="container-fluid py-lg-5">
-        <div class="row justify-content-between mb-5">
-          <div class="col-lg-5">
-            <h2 id="about-title" class="fs-4 lh-base mb-4">
-              إنطلق إلى السماء حدد أهدافك التسويقية من البداية مع هداف.
-            </h2>
-          </div>
-          <div class="col-lg-5">
-            <b class="d-block fs-5 mb-3">انشأت عام 2020</b>
-            <p class="text-white-50 mb-4">
-              مع أكثر من 150 مشروع جديد شهريًا وقاعدة تفوق ألف عميل مستمر، نمنحك
-              فريقًا متمرسًا يحول أفكارك إلى إبداع بصري ويضمن لك التميز الدائم
-              بين المنافسين.
-            </p>
+      <!-- ================= Services =================
+           نفس كارت .service-card في كل مكان (loop) — partials/service-card.html
+           .service-card--media = كارت الصورة. الـ JS بيكرر الصف عشان الحركة تبقى متصلة.
+           موبايل: الكروت بتترص تحت بعض (.services-stack)، و.services--preview بيعرض الصف الأول بس + زرار "المزيد" -->
+      <section class="services-home services--preview" aria-labelledby="servicesTitle">
+        <span class="blob blob--services" aria-hidden="true"></span>
+        <div class="container">
+          <div class="sec-head center reveal">
+            <span class="chip">خدماتنــــا</span>
+            <h2 class="sec-title" id="servicesTitle">خدمات تسويقية مميزة</h2>
           </div>
         </div>
 
-        <!-- Images -->
-        <div class="row g-4">
-          <div class="col-lg-12">
-            <figure class="mb-0">
-              <img
-                src="images/about.png"
-                class="img-fluid rounded-3 w-100 about-img"
-                alt="فريق عمل يناقش استراتيجية تسويقية داخل اجتماع"
-                loading="lazy"
-              />
-            </figure>
+        <div class="marquee" data-marquee data-speed="45" data-dir="1">
+          <a href="service_details.html" class="service-card card-tint">
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-palette"/></svg></span>
+            <h3>الهوية البصرية</h3>
+            <p>نبني هوية تجعل علامتك واضحة، مميزة، وسهلة هوية تجعل علامتك</p>
+            <span class="link-arrow">تفاصيــــل الخدمة <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-left"/></svg></span>
+          </a>
+
+          <div class="service-card service-card--media media-fill">
+            <img src="images/new/service-branding.webp" alt="صقر Branding" width="289" height="234" loading="lazy" decoding="async" />
           </div>
-          <div class="col-lg-7">
-            <figure class="mb-0">
-              <img
-                src="images/about.png"
-                class="img-fluid rounded-3 w-100 about-img"
-                alt="فريق عمل يناقش استراتيجية تسويقية داخل اجتماع"
-                loading="lazy"
-              />
-            </figure>
+
+          <a href="service_details.html" class="service-card card-tint">
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-palette"/></svg></span>
+            <h3>صناعة المحتوى</h3>
+            <p>نبني هوية تجعل علامتك واضحة، مميزة، وسهلة هوية تجعل علامتك</p>
+            <span class="link-arrow">تفاصيــــل الخدمة <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-left"/></svg></span>
+          </a>
+
+          <a href="service_details.html" class="service-card card-tint">
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-palette"/></svg></span>
+            <h3>الحملات الإعلانية</h3>
+            <p>نبني هوية تجعل علامتك واضحة، مميزة، وسهلة هوية تجعل علامتك</p>
+            <span class="link-arrow">تفاصيــــل الخدمة <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-left"/></svg></span>
+          </a>
+
+        </div>
+
+        <div class="marquee" data-marquee data-speed="45" data-dir="-1">
+          <a href="service_details.html" class="service-card card-tint">
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-palette"/></svg></span>
+            <h3>التسويق الرقمي</h3>
+            <p>نبني هوية تجعل علامتك واضحة، مميزة، وسهلة هوية تجعل علامتك</p>
+            <span class="link-arrow">تفاصيــــل الخدمة <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-left"/></svg></span>
+          </a>
+
+          <a href="service_details.html" class="service-card card-tint">
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-palette"/></svg></span>
+            <h3>تحسين محركات البحث</h3>
+            <p>نبني هوية تجعل علامتك واضحة، مميزة، وسهلة هوية تجعل علامتك</p>
+            <span class="link-arrow">تفاصيــــل الخدمة <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-left"/></svg></span>
+          </a>
+
+          <a href="service_details.html" class="service-card card-tint">
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-palette"/></svg></span>
+            <h3>تصميم الجرافيك</h3>
+            <p>نبني هوية تجعل علامتك واضحة، مميزة، وسهلة هوية تجعل علامتك</p>
+            <span class="link-arrow">تفاصيــــل الخدمة <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-left"/></svg></span>
+          </a>
+
+          <a href="service_details.html" class="service-card card-tint">
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-palette"/></svg></span>
+            <h3>إدارة الحسابات</h3>
+            <p>نبني هوية تجعل علامتك واضحة، مميزة، وسهلة هوية تجعل علامتك</p>
+            <span class="link-arrow">تفاصيــــل الخدمة <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-left"/></svg></span>
+          </a>
+
+        </div>
+
+        <div class="services-more text-center">
+          <a href="services.html" class="btn btn-main">المزيد عن الخدمات</a>
+        </div>
+      </section>
+
+      <!-- ================= Text marquee ================= -->
+      <section class="text-marquee" aria-label="يمكنك الآن بدأ إستشارتك المجانية">
+        <div class="marquee" data-marquee data-speed="60" data-dir="1" data-draggable="false" aria-hidden="true">
+          <span class="txt">يمكنك الآن بدأ إستشارتك المجانية</span><span class="dot"></span>
+          <span class="txt">يمكنك الآن بدأ إستشارتك المجانية</span><span class="dot"></span>
+        </div>
+      </section>
+
+      <!-- ================= Testimonials (Swiper) ================= -->
+      <section class="testimonials" aria-labelledby="tTitle">
+        <span class="blob blob--testimonials" aria-hidden="true"></span>
+        <div class="container">
+          <div class="sec-head center reveal mb-0">
+            <span class="chip">أراء العملاء</span>
+            <h2 class="sec-title" id="tTitle">ما يقوله العملاء</h2>
           </div>
-          <div class="col-lg-5">
-            <figure class="mb-0">
-              <img
-                src="images/about.png"
-                class="img-fluid rounded-3 w-100 about-img"
-                alt="فريق عمل يناقش استراتيجية تسويقية داخل اجتماع"
-                loading="lazy"
-              />
-            </figure>
+        </div>
+
+        <div class="swiper t-swiper" dir="rtl">
+          <div class="swiper-wrapper">
+            <!-- loop: testimonial -->
+            <div class="swiper-slide">
+              <figure class="t-card m-0">
+                <img class="avatar" src="images/new/avatar.webp" alt="" width="88" height="88" decoding="async" />
+                <blockquote>“التعاون مع هذا الفريق كان إنجازًا مطلقًا لمؤسستنا. سرعتهم الفائقة في الاستجابة، ودعمهم الثابت على جميع المستويات، وإخراجاتهم البارعة وضعت معيارًا جديدًا للتميز.”</blockquote>
+                <div class="stars" role="img" aria-label="تقييم 5 من 5"><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg></div>
+                <figcaption><h3>سارة العتيبي</h3><span class="role d-block mt-2">مديرة تسويق</span></figcaption>
+              </figure>
+            </div>
+            <div class="swiper-slide">
+              <figure class="t-card m-0">
+                <img class="avatar" src="images/new/avatar.webp" alt="" width="88" height="88" decoding="async" />
+                <blockquote>“التعاون مع هذا الفريق كان إنجازًا مطلقًا لمؤسستنا. سرعتهم الفائقة في الاستجابة، ودعمهم الثابت على جميع المستويات، وإخراجاتهم البارعة وضعت معيارًا جديدًا للتميز.”</blockquote>
+                <div class="stars" role="img" aria-label="تقييم 5 من 5"><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg></div>
+                <figcaption><h3>نورة العتيبي</h3><span class="role d-block mt-2">مديرة تسويق</span></figcaption>
+              </figure>
+            </div>
+            <div class="swiper-slide">
+              <figure class="t-card m-0">
+                <img class="avatar" src="images/new/avatar.webp" alt="" width="88" height="88" decoding="async" />
+                <blockquote>“التعاون مع هذا الفريق كان إنجازًا مطلقًا لمؤسستنا. سرعتهم الفائقة في الاستجابة، ودعمهم الثابت على جميع المستويات، وإخراجاتهم البارعة وضعت معيارًا جديدًا للتميز.”</blockquote>
+                <div class="stars" role="img" aria-label="تقييم 5 من 5"><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg></div>
+                <figcaption><h3>ريم القحطاني</h3><span class="role d-block mt-2">رائدة أعمال</span></figcaption>
+              </figure>
+            </div>
+            <div class="swiper-slide">
+              <figure class="t-card m-0">
+                <img class="avatar" src="images/new/avatar.webp" alt="" width="88" height="88" decoding="async" />
+                <blockquote>“التعاون مع هذا الفريق كان إنجازًا مطلقًا لمؤسستنا. سرعتهم الفائقة في الاستجابة، ودعمهم الثابت على جميع المستويات، وإخراجاتهم البارعة وضعت معيارًا جديدًا للتميز.”</blockquote>
+                <div class="stars" role="img" aria-label="تقييم 5 من 5"><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg></div>
+                <figcaption><h3>هند الشمري</h3><span class="role d-block mt-2">مديرة علامة تجارية</span></figcaption>
+              </figure>
+            </div>
+            <div class="swiper-slide">
+              <figure class="t-card m-0">
+                <img class="avatar" src="images/new/avatar.webp" alt="" width="88" height="88" decoding="async" />
+                <blockquote>“التعاون مع هذا الفريق كان إنجازًا مطلقًا لمؤسستنا. سرعتهم الفائقة في الاستجابة، ودعمهم الثابت على جميع المستويات، وإخراجاتهم البارعة وضعت معيارًا جديدًا للتميز.”</blockquote>
+                <div class="stars" role="img" aria-label="تقييم 5 من 5"><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star-fill"/></svg></div>
+                <figcaption><h3>لمى الدوسري</h3><span class="role d-block mt-2">مديرة مشاريع</span></figcaption>
+              </figure>
+            </div>
+            <!-- /loop -->
+          </div>
+        </div>
+        <div class="t-dots"></div>
+      </section>
+
+      <!-- ================= FAQ (Bootstrap accordion) ================= -->
+      <section class="faq" aria-labelledby="faqTitle">
+        <span class="blob blob--faq" aria-hidden="true"></span>
+        <div class="container position-relative">
+          <div class="sec-head center">
+            <span class="chip text-uppercase">FAQ</span>
+            <h2 class="sec-title" id="faqTitle">الأسئلة الشائعة</h2>
+          </div>
+
+          <div class="faq-wrap">
+          <img class="faq-art" src="images/new/faq-question.webp" alt="" width="140" height="147" decoding="async" />
+          <div class="accordion faq-list" id="faqList">
+            <!-- loop: faq ($loop->first → show) -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">هل تقدمون خدمات Branding كاملة؟</button>
+              </h3>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqList">
+                <div class="accordion-body">التعاون مع هذا الفريق كان إنجازًا مطلقًا لمؤسستنا. سرعتهم الفائقة في الاستجابة، ودعمهم الثابت على جميع المستويات، وإخراجاتهم البارعة وضعت معيارًا جديدًا للتميز. إن التزامهم الثابت بالتسليم في الوقت المحدد يتجاوز توقعاتنا بانتظام.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">كيف يتم تحديد تكلفة المشروع؟</button>
+              </h3>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                <div class="accordion-body">تعتمد التكلفة على نطاق العمل والمدة والخدمات المطلوبة، ونقدّم لك عرض سعر واضح بعد جلسة الاستشارة الأولى.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">ما الخدمات التي تقدمها هداف؟</button>
+              </h3>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                <div class="accordion-body">نقدم الهوية البصرية، صناعة المحتوى، التسويق الرقمي، الحملات الإعلانية، تحسين محركات البحث وتصميم وتطوير المواقع.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">كيف تبدأون العمل على مشروع جديد؟</button>
+              </h3>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                <div class="accordion-body">نبدأ بجلسة اكتشاف لفهم أهدافك، ثم نضع الاستراتيجية والخطة الزمنية قبل البدء في التنفيذ.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">كم يستغرق تنفيذ المشروع؟</button>
+              </h3>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                <div class="accordion-body">تختلف المدة حسب حجم المشروع، وتتراوح عادةً بين أسبوعين وثلاثة أشهر.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">هل يمكنكم تطوير موقع إلكتروني؟</button>
+              </h3>
+              <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqList">
+                <div class="accordion-body">نعم، نصمم ونطوّر مواقع إلكترونية متجاوبة وسريعة ومتوافقة مع محركات البحث.</div>
+              </div>
+            </div>
+            <!-- /loop -->
+          </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- ================= Footer ================= -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="f-cta">
+          <h2>اكتشف كيف يمكن <span>مساعدتك في إطلاق العنان لإمكانات البيانات لتحويل صناعتك.</span></h2>
+          <a href="contact_us.html" class="btn btn-main">إبدأ مشروعك الآن</a>
+        </div>
+
+        <div class="f-brand">
+          <div class="about">
+            <img src="images/logo.min.svg" alt="هداف" width="74" height="69" loading="lazy" />
+            <p>هدّاف.. هدفه ما تخطي — وكالة إبداعية رقمية تبني علامات لا تُنسى وتوصلها إلى العالم.</p>
+          </div>
+          <form class="newsletter" id="newsletter" novalidate>
+            <label for="nlEmail">اشترك في نشرتنا الاخبارية</label>
+            <div class="field">
+              <svg class="icon" aria-hidden="true"><use href="#i-envelope"/></svg>
+              <input id="nlEmail" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" placeholder="البريد الالكتروني" required />
+              <button type="submit" aria-label="اشتراك"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
+            </div>
+            <p class="msg" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="row g-4 f-cols">
+          <div class="col-12 col-sm-6 col-lg">
+            <h2>روابط سريعة</h2>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="services.html">خدماتنا</a></li>
+              <li><a href="projects.html">مشاريعنا</a></li>
+              <li><a href="blogs.html">المدونة</a></li>
+              <li><a href="contact_us.html">اتصل بنا</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-sm-6 col-lg">
+            <h2>الخدمات</h2>
+            <ul>
+              <li><a href="service_details.html">الحملات الإعلانية</a></li>
+              <li><a href="service_details.html">الهوية التجارية</a></li>
+              <li><a href="service_details.html">تحسين محركات البحث</a></li>
+              <li><a href="service_details.html">التسويق الرقمي</a></li>
+              <li><a href="service_details.html">تصميم الجرافيك</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-sm-6 col-lg col-contact f-contact">
+            <div><span>هاتف:</span><a href="tel:+90620930087" dir="ltr">+906 2093 0087</a></div>
+            <div><span>بريد إلكتروني:</span><a href="mailto:hello@navastudio.com" translate="no">hello@navastudio.com</a></div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg col-social">
+            <h2>وسائل التواصل</h2>
+            <div class="socials">
+              <a href="#" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+              <a href="#" aria-label="Twitter"><svg class="icon" aria-hidden="true"><use href="#i-twitter"/></svg></a>
+              <a href="#" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+              <a href="#" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="f-bottom">
+          <span class="copy">جميع الحقوق محفوظة © 2026</span>
+          <div class="legal">
+            <a href="terms.html">الشروط والأحكام</a><span aria-hidden="true">|</span><a href="policy.html">سياسة الخصوصية</a>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- الحل الإبداعي -->
-    <section class="solutions py-5">
-      <div class="container-fluid">
-        <div class="row justify-content-between align-items-center mb-5">
-          <div class="col-auto">
-            <span class="sec-title"> الحل الإبداعي </span>
-          </div>
-          <div class="col-md-3">
-            <span class="fs-4">
-              حلول رقمية متكاملة لتنمية حضورك وزيادة مبيعاتك
-            </span>
-          </div>
-        </div>
-        <div class="solutions_wrapper">
-          <div class="card">
-            <div class="card-body">
-              <div class="row align-items-center justify-content-between">
-                <div class="col-md-2">
-                  <span class="step_num mb-md-0">01</span>
-                </div>
-                <div class="col-md-5">
-                  <h2 class="card-title fs-3">إدارة وسائل التواصل الاجتماعي</h2>
-                </div>
-                <div class="col-lg-3">
-                  <div class="card-desc">
-                    <p>
-                      إدارة حسابات التواصل الاجتماعي بتصميم محتوى يعكس هوية
-                      العلامة التجارية
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="row align-items-center justify-content-between">
-                <div class="col-md-2">
-                  <span class="step_num mb-md-0">02</span>
-                </div>
-                <div class="col-md-5">
-                  <h2 class="card-title fs-3">تحسين معدل التحويل</h2>
-                </div>
-                <div class="col-lg-3">
-                  <div class="card-desc">
-                    <p>تحسين واجهة المتجر الإلكتروني لتسهيل تجربة الشراء.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="row align-items-center justify-content-between">
-                <div class="col-md-2">
-                  <span class="step_num mb-md-0">03</span>
-                </div>
-                <div class="col-md-5">
-                  <h2 class="card-title fs-3">إدارة الحملات الإعلانية</h2>
-                </div>
-                <div class="col-lg-3">
-                  <div class="card-desc">
-                    <p>
-                      ندرس الجمهور المستهدف ونضع خططًا إستراتيجية لعميلك لزيادة
-                      الانتشار.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="row align-items-center justify-content-between">
-                <div class="col-md-2">
-                  <span class="step_num mb-md-0">04</span>
-                </div>
-                <div class="col-md-5">
-                  <h2 class="card-title fs-3">تحسين محركات البحث</h2>
-                </div>
-                <div class="col-lg-3">
-                  <div class="card-desc">
-                    <p>رفع ترتيب المواقع في جوجل لتعزيز البقاء والتفاعل.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <a href="#" id="scroll-top">
-      <i class="bi bi-chevron-double-up"></i>
-    </a>
-
-    <footer>
-      <div class="overlay pt-5">
-        <div class="container-fluid pt-5">
-          <p class="display-3 text-center mb-5">دعنـــا نعمل معا</p>
-          <div class="footer-nav pt-5 pb-4">
-            <div class="navbar navbar-expand-lg mt-5 py-4">
-              <div class="row g-3 align-items-start justify-content-between">
-                <div class="col-lg-3 col-md-6">
-                  <div>
-                    <h2>هداف</h2>
-                    <p class="my-3">تواصل معي :</p>
-                    <nav aria-label="Social Media Links">
-                      <ul class="social-icons">
-                        <li>
-                          <a
-                            href=""
-                            target="_blank"
-                            aria-label="Visit our LinkedIn page"
-                          >
-                            <i class="fa-brands fa-linkedin-in"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href=""
-                            target="_blank"
-                            aria-label="Visit our Twitter page"
-                          >
-                            <i class="fa-brands fa-x-twitter"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href=""
-                            target="_blank"
-                            aria-label="Visit our Instagram page"
-                          >
-                            <i class="fa-brands fa-instagram"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href=""
-                            target="_blank"
-                            aria-label="Visit our Facebook page"
-                          >
-                            <i class="fa-brands fa-facebook-f"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
-                <div class="col-lg-2 col-md-5">
-                  <h4 class="fs-6">الصفحات</h4>
-                  <ul class="navbar-nav mb-0">
-                    <li class="nav-item">
-                      <a class="nav-link" href="index.html">الرئيسية</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="about_us.html">معلومات عنا</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="services.html">خدماتنا</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="projects.html">مشاريعنا</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="blogs.html">المدونة</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="contact_us.html">اتصل بنا</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-3 col-md-5">
-                  <h4 class="fs-6">الخدمات</h4>
-                  <ul class="navbar-nav mb-0">
-                    <li class="nav-item">
-                      <a class="nav-link" href="service_details.html"
-                        >الحملات الإعلانية</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="service_details.html"
-                        >تصميم جرافيك</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="service_details.html"
-                        >الهوية التجارية
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="service_details.html"
-                        >تحسين محركات البحث</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="service_details.html"
-                        >إدارة حسابات التواصل الاجتماعي(SMM)</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-3 col-md-5">
-                  <ul class="navbar-nav mb-0">
-                    <li class="nav-item">
-                      <a
-                        class="nav-link flex-column align-items-start"
-                        href="tel:90620930087"
-                      >
-                        <span class="d-block">هاتف:</span>
-                        <span class="text-white">+906 2093 0087</span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link flex-column align-items-start"
-                        href="maitto:hello@navastudio.com"
-                      >
-                        <span class="d-block">بريد إلكتروني:</span>
-                        <span class="text-white">hello@navastudio.com</span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link flex-column align-items-start"
-                        href="maitto:hello@navastudio.com"
-                      >
-                        <span class="d-block">عنوان:</span>
-                        <span class="text-white"
-                          >١٢٣ شارع مابل وود، سبرينغفيلد، إلينوي ٦٢٧٠٤، الولايات
-                          المتحدة الأمريكية</span
-                        >
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="copyrights">
-            <div
-              class="d-flex gap-1 flex-wrap w-100 align-items-center justify-content-md-between justify-content-center"
-            >
-              <span>جميع الحقوق محفوظة © 2025</span>
-              <div class="d-flex gap-1 align-items-center">
-                <a href="">الشروط والأحكام </a>
-                <span>|</span>
-                <a href="">سياسة الخصوصية</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="f-watermark" aria-hidden="true">هداف</div>
     </footer>
 
-    <!-- jQuery script -->
-    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js" defer></script>
 
-    <!-- bootstrap script -->
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/swiper-bundle.min.js" defer></script>
 
-    <!-- owl-carousel script -->
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- select2 script -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-    <!-- fancybox script-->
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-    <!-- custom js file link  -->
-    <script src="js/script.js"></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>
