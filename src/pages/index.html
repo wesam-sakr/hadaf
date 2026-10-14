@@ -5,21 +5,8 @@ nav: home
 swiper: 1
 -->
 <!-- @section hero -->
-    <!-- ================= Hero ================= -->
-    <section class="hero">
-      <!-- الفيديو بيبدأ يحمّل بعد الانترو / بعد ما الصفحة تخلص (data-src).
-           data-src-mobile = نسخة الموبايل (≤ 768px). الصورة اللي قبل الفيديو = خلفية .hero في الـ CSS -->
-      <video class="hero-video" id="heroVideo" loop playsinline preload="none" aria-hidden="true">
-        <source data-src="videos/hero.mp4" data-src-mobile="videos/hero-mobile.mp4" type="video/mp4" />
-      </video>
-      <button class="icon-btn sound-toggle" id="soundToggle" type="button" aria-label="تشغيل الصوت">
-        <svg class="icon" aria-hidden="true"><use href="#i-volume-mute-fill"/></svg>
-      </button>
-      <div class="hero-content">
-        <h1>وجهتك الأولى لإدارة وكالتك التسويقية مع فريق يضم أفضل الخبرات التقنية</h1>
-        <a href="contact_us.html" class="btn btn-main">استشــــارة مجــــــانية</a>
-      </div>
-    </section>
+<!-- @include hero video="videos/hero.mp4" videoMobile="videos/hero-mobile.mp4" sound="1" -->
+
 <!-- @section main -->
       <!-- ================= About ================= -->
       <section class="section about-intro" aria-labelledby="aboutTitle">

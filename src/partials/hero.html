@@ -1,0 +1,36 @@
+    <!-- ================= Hero =================
+         الهيرو بيقبل فيديو أو صورة/GIF — اختار واحد في src/pages/index.html:
+
+         فيديو بصوت (زي دلوقتي):
+           @include hero video="videos/hero.mp4" videoMobile="videos/hero-mobile.mp4" sound="1"
+         فيديو صامت بيلف زي الـ GIF (الأخف والأفضل للأداء):
+           @include hero video="videos/x.mp4" videoMobile="videos/x-mobile.mp4"
+         صورة أو GIF أو WebP متحركة:
+           @include hero image="images/new/x.gif" imageMobile="images/new/x-mobile.gif"
+
+         poster / posterMobile = صورة بتظهر لحد ما الفيديو يحمّل (ولو الزائر مفعّل تقليل الحركة) -->
+    <section class="hero" style="--hero-poster: url('{{poster|videos/hero-poster.webp}}'); --hero-poster-mobile: url('{{posterMobile|videos/hero-poster-mobile.webp}}');">
+<!-- @if video -->
+      <video class="hero-media" id="heroVideo" loop playsinline preload="none" aria-hidden="true"<!-- @if !sound --> muted data-muted<!-- @endif -->>
+        <source data-src="{{video}}" data-src-mobile="{{videoMobile}}" type="video/mp4" />
+      </video>
+<!-- @if sound -->
+      <button class="icon-btn sound-toggle" id="soundToggle" type="button" aria-label="تشغيل الصوت">
+        <svg class="icon" aria-hidden="true"><use href="#i-volume-mute-fill"/></svg>
+      </button>
+<!-- @endif -->
+<!-- @endif -->
+<!-- @if image -->
+      <picture class="hero-media" aria-hidden="true">
+        <source srcset="{{poster|videos/hero-poster.webp}}" media="(prefers-reduced-motion: reduce)" />
+<!-- @if imageMobile -->
+        <source srcset="{{imageMobile}}" media="(max-width: 768px)" />
+<!-- @endif -->
+        <img src="{{image}}" alt="" fetchpriority="high" decoding="async" />
+      </picture>
+<!-- @endif -->
+      <div class="hero-content">
+        <h1>{{heroTitle|وجهتك الأولى لإدارة وكالتك التسويقية مع فريق يضم أفضل الخبرات التقنية}}</h1>
+        <a href="contact_us.html" class="btn btn-main">استشــــارة مجــــــانية</a>
+      </div>
+    </section>

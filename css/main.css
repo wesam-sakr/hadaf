@@ -270,11 +270,11 @@ main, .site-footer, .section, .services-home, .testimonials, .faq { overflow-x: 
   display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
   padding: 0 24px 50px;
   /* أول frame من الفيديو كخلفية لحد ما الفيديو يحمّل */
-  background: var(--dark) url("../videos/hero-poster.webp") center / cover no-repeat;
+  background: var(--dark) var(--hero-poster) center / cover no-repeat;
   border-radius: 0 0 var(--radius-xl) var(--radius-xl);
 }
-@media (max-width: 768px) { .hero { background-image: url("../videos/hero-poster-mobile.webp"); } }
-.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+@media (max-width: 768px) { .hero { background-image: var(--hero-poster-mobile); } }
+.hero-media, .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; z-index: -2; }
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background:

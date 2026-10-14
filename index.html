@@ -103,21 +103,33 @@
       </div>
     </div>
 
-    <!-- ================= Hero ================= -->
-    <section class="hero">
-      <!-- الفيديو بيبدأ يحمّل بعد الانترو / بعد ما الصفحة تخلص (data-src).
-           data-src-mobile = نسخة الموبايل (≤ 768px). الصورة اللي قبل الفيديو = خلفية .hero في الـ CSS -->
-      <video class="hero-video" id="heroVideo" loop playsinline preload="none" aria-hidden="true">
+        <!-- ================= Hero =================
+         الهيرو بيقبل فيديو أو صورة/GIF — اختار واحد في src/pages/index.html:
+
+         فيديو بصوت (زي دلوقتي):
+           @include hero video="videos/hero.mp4" videoMobile="videos/hero-mobile.mp4" sound="1"
+         فيديو صامت بيلف زي الـ GIF (الأخف والأفضل للأداء):
+           @include hero video="videos/x.mp4" videoMobile="videos/x-mobile.mp4"
+         صورة أو GIF أو WebP متحركة:
+           @include hero image="images/new/x.gif" imageMobile="images/new/x-mobile.gif"
+
+         poster / posterMobile = صورة بتظهر لحد ما الفيديو يحمّل (ولو الزائر مفعّل تقليل الحركة) -->
+    <section class="hero" style="--hero-poster: url('videos/hero-poster.webp'); --hero-poster-mobile: url('videos/hero-poster-mobile.webp');">
+
+      <video class="hero-media" id="heroVideo" loop playsinline preload="none" aria-hidden="true">
         <source data-src="videos/hero.mp4" data-src-mobile="videos/hero-mobile.mp4" type="video/mp4" />
       </video>
+
       <button class="icon-btn sound-toggle" id="soundToggle" type="button" aria-label="تشغيل الصوت">
         <svg class="icon" aria-hidden="true"><use href="#i-volume-mute-fill"/></svg>
       </button>
+
       <div class="hero-content">
         <h1>وجهتك الأولى لإدارة وكالتك التسويقية مع فريق يضم أفضل الخبرات التقنية</h1>
         <a href="contact_us.html" class="btn btn-main">استشــــارة مجــــــانية</a>
       </div>
     </section>
+
     <main id="main" tabindex="-1">
       <!-- ================= About ================= -->
       <section class="section about-intro" aria-labelledby="aboutTitle">

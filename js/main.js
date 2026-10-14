@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const unlockEvents = ["pointerdown", "keydown", "touchstart"];
   let pendingUnmute = null;
   const play = (video, btn) => {
-    const wantSound = store.get("hadafSound") !== "off";
+    const wantSound = !video.hasAttribute("data-muted") && store.get("hadafSound") !== "off";   // data-muted = فيديو صامت زي الـ GIF
     const fallback = () => {
       video.muted = true;
       video.play().catch(() => {});
