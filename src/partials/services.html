@@ -1,7 +1,7 @@
       <!-- ================= Services =================
            نفس كارت .service-card في كل مكان (loop) — partials/service-card.html
-           .service-card--media = كارت الصورة. الـ JS بيكرر الصف عشان الحركة تبقى متصلة.
-           موبايل: الكروت بتترص تحت بعض (.services-stack)، و.services--preview بيعرض الصف الأول بس + زرار "المزيد" -->
+           img="..." = صورة الهافر بتاعة الخدمة (من غيرها بتاخد الصورة الافتراضية). الـ JS بيكرر الصف عشان الحركة تبقى متصلة.
+           موبايل: الكروت بتترص تحت بعض (الكروت تحت بعض)، و.services--preview بيعرض الصف الأول بس + زرار "المزيد" -->
       <section class="services-home{{class| }}" aria-labelledby="servicesTitle">
         <span class="blob blob--services" aria-hidden="true"></span>
         <div class="container">
@@ -13,11 +13,6 @@
 
         <div class="marquee" data-marquee data-speed="45" data-dir="1">
           <!-- @include service-card title="الهوية البصرية" -->
-<!-- @if media -->
-          <div class="service-card service-card--media media-fill">
-            <img src="images/new/service-branding.webp" alt="صقر Branding" width="289" height="234" loading="lazy" decoding="async" />
-          </div>
-<!-- @endif -->
           <!-- @include service-card title="صناعة المحتوى" -->
           <!-- @include service-card title="الحملات الإعلانية" -->
         </div>

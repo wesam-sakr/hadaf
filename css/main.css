@@ -342,8 +342,9 @@ main, .site-footer, .section, .services-home, .testimonials, .faq { overflow-x: 
 
 /* --- Service card ---
    <a class="service-card card-tint"> ico / h3 / p / link-arrow
-   .service-card--media  → كارت صورة بدل المحتوى               */
+   .hover-media → صورة الخدمة، بتظهر فوق الكارت في الهافر         */
 .service-card {
+  position: relative; isolation: isolate; overflow: hidden;
   width: 424px; flex-shrink: 0; padding: 40px 32px;
   display: flex; flex-direction: column; align-items: flex-start; gap: 24px;
   transition: box-shadow .3s var(--ease), border-color .3s var(--ease);
@@ -356,7 +357,17 @@ main, .site-footer, .section, .services-home, .testimonials, .faq { overflow-x: 
 }
 .service-card h3 { padding-top: 20px; font-weight: 600; font-size: 1.75rem; line-height: 1.75rem; letter-spacing: -.0125rem; color: var(--ink); }
 .service-card p { color: var(--gray); font-weight: 500; font-size: 1.25rem; line-height: 1.75rem; text-align: justify; }
-.service-card--media { padding: 0; min-height: 347px; border: 0; border-radius: var(--radius-xl); overflow: hidden; background: var(--grad-dark), var(--dark); }
+.service-card .hover-media {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: var(--grad-dark), var(--dark);
+  opacity: 0; transition: opacity .45s var(--ease);
+}
+.service-card .hover-media img { width: 100%; height: 100%; max-width: none; object-fit: cover; transform: scale(1.08); transition: transform .7s var(--ease); }
+@media (hover: hover) {
+  .service-card:hover .hover-media { opacity: 1; }
+  .service-card:hover .hover-media img { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .service-card .hover-media, .service-card .hover-media img { transition: none; } }
 
 /* --- Project card ---
    <article class="project-card"> img / .info(tag-pill, h3, p, link-arrow)
@@ -730,7 +741,6 @@ main, .site-footer, .section, .services-home, .testimonials, .faq { overflow-x: 
   .services-home .marquee { flex-direction: column; width: auto; margin: 0 16px 16px; gap: 16px; transform: none !important; cursor: auto; }
   .services-home .marquee > [aria-hidden="true"] { display: none; }
   .services-home .service-card { width: 100%; }
-  .services-home .service-card--media { min-height: 0; aspect-ratio: 335 / 347; }
   .services--preview .marquee + .marquee { display: none; }
   .services-more { display: block; margin-top: 8px; }
 }
