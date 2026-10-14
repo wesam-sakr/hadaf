@@ -275,6 +275,21 @@ main, .site-footer, .section, .services-home, .testimonials, .faq { overflow-x: 
 }
 @media (max-width: 768px) { .hero { background-image: var(--hero-poster-mobile); } }
 .hero-media, .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; z-index: -2; }
+/* .hero--framed: الميديا في النص فوق الكلام (زي التصميم) والأطراف بتختفي في خلفية الهيرو */
+.hero--framed { background: radial-gradient(ellipse 70% 60% at 50% 25%, #5e0d1f 0%, #3a1220 45%, #2a151c 100%); }
+.hero--framed .hero-media {
+  position: absolute; z-index: -2; inset: auto;
+  top: calc(var(--logo-h) + var(--header-pad-y) * 2 - 70px); left: 50%; transform: translateX(-50%);
+  height: 82%; width: auto; max-width: none; aspect-ratio: 16 / 9;
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 60%, transparent 100%);
+          mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 60%, transparent 100%);
+}
+.hero--framed .hero-media img { position: static; }
+.hero--framed::after { background: linear-gradient(to bottom, rgba(var(--ink-rgb), .45) 0%, rgba(var(--ink-rgb), 0) 18%), linear-gradient(to top, rgba(var(--ink-rgb), .55) 0%, rgba(var(--ink-rgb), 0) 30%); }
+@media (max-width: 767.98px) {
+  .hero--framed .hero-media { height: 62%; top: calc(var(--logo-h) + var(--header-pad-y) * 2 - 30px); }
+}
+
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background:

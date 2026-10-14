@@ -8,10 +8,11 @@
          صورة أو GIF أو WebP متحركة:
            @include hero image="images/new/x.gif" imageMobile="images/new/x-mobile.gif"
 
+         framed="1" = الفيديو/الصورة في نص الهيرو بحجم أصغر وحواليه خلفية (بدل ما يملا الهيرو كله)
          poster / posterMobile = صورة بتظهر لحد ما الفيديو يحمّل (ولو الزائر مفعّل تقليل الحركة) -->
-    <section class="hero" style="--hero-poster: url('{{poster|videos/hero-poster.webp}}'); --hero-poster-mobile: url('{{posterMobile|videos/hero-poster-mobile.webp}}');">
+    <section class="hero<!-- @if framed --> hero--framed<!-- @endif -->" style="--hero-poster: url('{{poster|videos/hero-poster.webp}}'); --hero-poster-mobile: url('{{posterMobile|videos/hero-poster-mobile.webp}}');">
 <!-- @if video -->
-      <video class="hero-media" id="heroVideo" loop playsinline preload="none" aria-hidden="true"<!-- @if !sound --> muted data-muted<!-- @endif -->>
+      <video class="hero-media" id="heroVideo" loop playsinline preload="none" poster="{{poster|videos/hero-poster.webp}}" aria-hidden="true"<!-- @if !sound --> muted data-muted<!-- @endif -->>
         <source data-src="{{video}}" data-src-mobile="{{videoMobile}}" type="video/mp4" />
       </video>
 <!-- @if sound -->
