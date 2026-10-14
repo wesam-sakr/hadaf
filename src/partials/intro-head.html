@@ -1,0 +1,13 @@
+<!-- الانترو يظهر مرة واحدة في اليوم: القرار هنا قبل ما الصفحة تترسم عشان ما يحصلش flash -->
+    <script>
+      (function () {
+        try {
+          var d = new Date(), today = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+          var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (!reduce && localStorage.getItem("hadafIntroDate") !== today) {
+            document.documentElement.classList.add("show-intro");
+            localStorage.setItem("hadafIntroDate", today);
+          }
+        } catch (e) {}
+      })();
+    </script>

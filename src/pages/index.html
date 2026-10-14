@@ -4,35 +4,6 @@ description: هداف وكالة إبداعية تساعد العلامات ال
 nav: home
 swiper: 1
 -->
-<!-- @section head -->
-    <!-- الانترو يظهر مرة واحدة في اليوم: القرار هنا قبل ما الصفحة تترسم عشان ما يحصلش flash -->
-    <script>
-      (function () {
-        try {
-          var d = new Date(), today = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
-          var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-          if (!reduce && localStorage.getItem("hadafIntroDate") !== today) {
-            document.documentElement.classList.add("show-intro");
-            localStorage.setItem("hadafIntroDate", today);
-          }
-        } catch (e) {}
-      })();
-    </script>
-<!-- @section top -->
-    <!-- ================= Intro (مرة في اليوم) ================= -->
-    <div class="intro" id="intro" role="dialog" aria-modal="true" aria-label="فيديو تعريفي بهداف">
-      <video class="intro-video" id="introVideo" playsinline preload="none" aria-hidden="true">
-        <source data-src="videos/intro.mp4" data-src-mobile="videos/intro-mobile.mp4" type="video/mp4" />
-      </video>
-      <div class="intro-controls">
-        <button class="icon-btn" id="introSound" type="button" aria-label="تشغيل الصوت">
-          <svg class="icon" aria-hidden="true"><use href="#i-volume-mute-fill"/></svg>
-        </button>
-        <button class="btn btn-main intro-skip" id="introSkip" type="button">
-          تخطي <svg class="icon" aria-hidden="true"><use href="#i-skip-forward-fill"/></svg>
-        </button>
-      </div>
-    </div>
 <!-- @section hero -->
     <!-- ================= Hero ================= -->
     <section class="hero">

@@ -1,0 +1,21 @@
+<!-- =========================================================
+     الانترو (مرة في اليوم) — متوقف حاليًا.
+     لإرجاعه: في src/pages/index.html ضيف قبل "@section hero":
+       <!-- @section head -->  ثم سطر:  <!-- @include intro-head -->
+       <!-- @section top -->   ثم سطر:  <!-- @include intro -->
+     والـ JS في main.js شغال لوحده لو العنصر #intro موجود.
+     ========================================================= -->
+<!-- ================= Intro (مرة في اليوم) ================= -->
+    <div class="intro" id="intro" role="dialog" aria-modal="true" aria-label="فيديو تعريفي بهداف">
+      <video class="intro-video" id="introVideo" playsinline preload="none" aria-hidden="true">
+        <source data-src="videos/intro.mp4" data-src-mobile="videos/intro-mobile.mp4" type="video/mp4" />
+      </video>
+      <div class="intro-controls">
+        <button class="icon-btn" id="introSound" type="button" aria-label="تشغيل الصوت">
+          <svg class="icon" aria-hidden="true"><use href="#i-volume-mute-fill"/></svg>
+        </button>
+        <button class="btn btn-main intro-skip" id="introSkip" type="button">
+          تخطي <svg class="icon" aria-hidden="true"><use href="#i-skip-forward-fill"/></svg>
+        </button>
+      </div>
+    </div>
