@@ -114,15 +114,11 @@
            @include hero image="images/new/x.gif" imageMobile="images/new/x-mobile.gif"
 
          poster / posterMobile = صورة بتظهر لحد ما الفيديو يحمّل (ولو الزائر مفعّل تقليل الحركة) -->
-    <section class="hero" style="--hero-poster: url('videos/hero-poster.webp'); --hero-poster-mobile: url('videos/hero-poster-mobile.webp');">
+    <section class="hero" style="--hero-poster: url('videos/falcon-poster.webp'); --hero-poster-mobile: url('videos/falcon-poster-mobile.webp');">
 
-      <video class="hero-media" id="heroVideo" loop playsinline preload="none" aria-hidden="true">
-        <source data-src="videos/hero.mp4" data-src-mobile="videos/hero-mobile.mp4" type="video/mp4" />
+      <video class="hero-media" id="heroVideo" loop playsinline preload="none" aria-hidden="true" muted data-muted>
+        <source data-src="videos/falcon.mp4" data-src-mobile="videos/falcon-mobile.mp4" type="video/mp4" />
       </video>
-
-      <button class="icon-btn sound-toggle" id="soundToggle" type="button" aria-label="تشغيل الصوت">
-        <svg class="icon" aria-hidden="true"><use href="#i-volume-mute-fill"/></svg>
-      </button>
 
       <div class="hero-content">
         <h1>وجهتك الأولى لإدارة وكالتك التسويقية مع فريق يضم أفضل الخبرات التقنية</h1>
@@ -130,6 +126,7 @@
       </div>
     </section>
 
+<!-- الفيديو القديم بصوت: @include hero video="videos/hero.mp4" videoMobile="videos/hero-mobile.mp4" sound="1" -->
     <main id="main" tabindex="-1">
       <!-- ================= About ================= -->
       <section class="section about-intro" aria-labelledby="aboutTitle">
